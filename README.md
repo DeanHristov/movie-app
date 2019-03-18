@@ -41,10 +41,11 @@ src/                   Project source code live here
   |-Login              Another dummy route - Login (/login) 
     |-containers       The all React containers components live here
     |-ui               The all React presentation  components live here
-  |- store/            Redux store live here
-    |-actions          The all redux actions (async or sync) are stored here  
-    |-reducers         The all redux reducers  are stored here  
-    |-createStore.js   This file is responsible for creating a redux's state shape
+  |  +- ...            Аdditional Routes 
+|- store/              Redux store live here
+  |-actions            The all redux actions (async or sync) are stored here  
+  |-reducers           The all redux reducers  are stored here  
+  |-createStore.js     This file is responsible for creating a redux's state shape
 |- styles/             The app styles are lives here
 |- index.html          Static entry file
 |- Main.jsx            An entry point of app

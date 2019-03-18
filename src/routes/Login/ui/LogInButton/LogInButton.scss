@@ -1,0 +1,15 @@
+.sign-in-button{
+  min-width: 16rem;
+  background-color: #2196f3;
+  border: 0;
+  border-radius: 5rem;
+  padding: .5rem 5rem;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+
+  outline:0;
+  box-shadow: 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.2),
+              0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.14),
+              0 0.1rem 1rem 0 rgba(0, 0, 0, 0.12);
+}

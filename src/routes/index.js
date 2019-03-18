@@ -1,5 +1,5 @@
-import HomeContainer from './Home/containers/HomeContainer';
-import LoginContainer from './Login/containers/LoginContainer';
+import HomeContainer from './Home/HomeContainer';
+import LoginContainer from './Login/LoginContainer';
 
 import {urlRoutes} from '@constants/initialAppState'
 
@@ -8,8 +8,11 @@ export default (store) => [{
   component: LoginContainer
 }, {
   path: urlRoutes.HOME_URL,
-  component: HomeContainer
+  component: HomeContainer,
+  exact: true,
 }];
+
+
 
 
 

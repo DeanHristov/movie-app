@@ -52,7 +52,9 @@ export const requestState =  {
 
 
 export const urlRoutes = {
-  HOME_URL: '/home',
+  HOME_URL: '/',
   LOGIN_URL: '/login',
-  SEARCH_URL: '/search'
+  SEARCH_URL: '/search',
+  PAGE_ID: '/:movieId',
+  ABOUT: '/about'
 }
