@@ -14,6 +14,7 @@ export default (state = intlState, action ) => {
     case '@@intl/UPDATE': {
       const { locale, messages } = action.payload
       return {
+        ...state,
         locale,
         messages
       }

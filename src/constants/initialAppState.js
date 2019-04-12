@@ -35,6 +35,7 @@ export const settingPanelState = {
   togglePanel: false
 }
 export const intlState = {
+    languages: ['en', 'bg'],
     locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
     messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
 }

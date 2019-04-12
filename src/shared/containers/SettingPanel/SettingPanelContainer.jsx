@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { togglePanel } from '@store/actions/settingPanelActions';
+import LanguagePanel from '@shared/ui/Language/LanguagePanel'
 import './SettingPanelContainer.scss';
 import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
 
@@ -20,7 +21,7 @@ export default class SettingPanelContainer extends Component {
         <span className={'icon'} onClick={::this.onclick}>
            <FontAwesomeIcon icon={faTimes}/>
         </span>
-
+        <LanguagePanel />
 
       </div>
     )
