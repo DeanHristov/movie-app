@@ -6,6 +6,7 @@ import locationReducer from './locationReducer'
 import intlReducer from './intlReducer';
 import requestReducer from './requestReducer';
 import toggleMenuReducer from "./toggleMenuReducer";
+import settingPanelReducer from "./settingPanelReducer";
 
 export default combineReducers({
     movies: movieReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
     location: locationReducer,
     intl: intlReducer,
     request: requestReducer,
-    menu: toggleMenuReducer
+    menu: toggleMenuReducer,
+    settingPanel: settingPanelReducer
 })

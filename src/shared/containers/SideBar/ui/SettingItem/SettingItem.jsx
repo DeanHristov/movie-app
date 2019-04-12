@@ -1,21 +1,29 @@
 import React, {Component} from 'react'
-import {NavLink} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import './SettingItem.scss'
 import {faCogs} from "@fortawesome/free-solid-svg-icons/faCogs";
 import {FormattedMessage} from "react-intl";
+import {connect} from "react-redux";
 
+import { togglePanel } from '@store/actions/settingPanelActions';
+import './SettingItem.scss'
+
+@connect(null, dispatch => ({
+  doShowPanell : state => dispatch(togglePanel(state))
+}))
 export default class SettingItem extends Component {
+
+  onClick () {
+    this.props.doShowPanell(true);
+  }
   render() {
     return (
       <li className={'nav-list-item flex-row setting'}>
         <span>
           <FontAwesomeIcon icon={faCogs} color={'#999'} />
         </span>
-        <NavLink activeClassName={'active'} to={''}>
+        <a href={'javascript:void(0)'} onClick={::this.onClick} >
           <FormattedMessage id={'app:nav:title:settings'} />
-        </NavLink>
+        </a>
       </li>
     )
   }

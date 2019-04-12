@@ -10,8 +10,6 @@ addLocaleData([
 ]);
 
 export default (state = intlState, action ) => {
-  console.log(state, action)
-
   switch (action.type) {
     case '@@intl/UPDATE': {
       const { locale, messages } = action.payload

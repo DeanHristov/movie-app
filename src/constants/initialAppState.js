@@ -30,6 +30,10 @@ export const userState = {
 export const LOCAL_STORAGE = {
   LOCALE: 'app:locale'
 }
+
+export const settingPanelState = {
+  togglePanel: false
+}
 export const intlState = {
     locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
     messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
