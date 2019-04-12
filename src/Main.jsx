@@ -7,7 +7,8 @@ import {faIgloo} from '@fortawesome/free-solid-svg-icons'
 
 import rootRoutes from '@routes/index';
 import createStore from '@store/createStore'
-import {urlRoutes} from '@constants/initialAppState'
+import HeaderContainer from "@shared/containers/Header/HeaderContainer";
+import './Main.scss'
 
 const store = createStore(window.__INITIAL_STATE__);
 const $ROOT_NODE = document.getElementById('app-root')
@@ -15,14 +16,11 @@ const routes = rootRoutes(store);
 
 library.add(faIgloo);
 
-import '@styles/Main.scss'
-
 class Main extends Component {
   render() {
     return (
       <div className="app-container">
-
-
+        <HeaderContainer/>
         {routes.map((route, idx) =>
           <Route
             key={`route-${idx}`}

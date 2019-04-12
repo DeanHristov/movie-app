@@ -30,8 +30,12 @@ export const intlState = {
     messages: {}
 }
 
+export const initMenuState = {
+  toggleMenu: false
+}
+
 export const requestState =  {
-  // In this time the UI have to trigger some kind of state like 'spinner' 
+  // In this time the UI have to trigger some kind of state like 'spinner'
   isFetching: false,
 
   // There should be: 'error' or 'success'

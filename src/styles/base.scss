@@ -1,4 +1,5 @@
 @import "./reset";
+@import "fonts/playfair-display";
 
 *{
   box-sizing: border-box;
@@ -13,7 +14,8 @@
 
 
 .flex-row {
-
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-col {
@@ -22,4 +24,20 @@
 
 .grid {
 
+}
+
+.text-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-bold-italic{
+  font-family: Playfair Display Bold Italic;
+  font-weight: bold;
+
+}
+
+.on-overlay {
+  background-color: rgba(0,0,0,0.4);
 }

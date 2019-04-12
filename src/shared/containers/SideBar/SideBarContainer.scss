@@ -1,0 +1,24 @@
+.side-bar-container {
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: .4s;
+  overflow: hidden;
+
+  background-color: #2a2b30;
+  border-right: .1rem solid #202125;
+  z-index: 1;
+
+  &.on-show{
+    width: 26rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .side-bar-container{
+    width: 20rem;
+  }
+}

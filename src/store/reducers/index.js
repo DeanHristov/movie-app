@@ -5,11 +5,13 @@ import movieReducer from './movieReducer';
 import locationReducer from './locationReducer'
 import intlReducer from './intlReducer';
 import requestReducer from './requestReducer';
+import toggleMenuReducer from "./toggleMenuReducer";
 
 export default combineReducers({
     movies: movieReducer,
     user: userReducer,
     location: locationReducer,
     intl: intlReducer,
-    request: requestReducer
+    request: requestReducer,
+    menu: toggleMenuReducer
 })
