@@ -1,3 +1,5 @@
+import LocaleLoader from "./LocaleLoader";
+
 export const movieState = {
     movies: [
     ],
@@ -25,16 +27,19 @@ export const userState = {
     }
 }
 
+export const LOCAL_STORAGE = {
+  LOCALE: 'app:locale'
+}
 export const intlState = {
-    locale: 'en',
-    messages: {}
+    locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
+    messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
 }
 
 export const initMenuState = {
   toggleMenu: false
 }
 
-export const requestState =  {
+export const requestState = {
   // In this time the UI have to trigger some kind of state like 'spinner'
   isFetching: false,
 
@@ -53,12 +58,11 @@ export const requestState =  {
   data: []
 };
 
-
-
-export const urlRoutes = {
-  HOME_URL: '/',
-  LOGIN_URL: '/login',
-  SEARCH_URL: '/search',
-  PAGE_ID: '/:movieId',
-  ABOUT: '/about'
-}
+export const urlRoutes = [
+  {path: '/', title: 'home', isUsage: true},
+  {path: '/login', title: 'login', isUsage: false},
+  {path: '/search', title: 'search', isUsage: true},
+  {path: '/:movieId', title: 'movie', isUsage: false},
+  {path: '/movies', title: 'movies', isUsage: true},
+  {path: '/about', title: 'about', isUsage: true},
+];

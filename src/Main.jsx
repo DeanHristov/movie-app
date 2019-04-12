@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faIgloo} from '@fortawesome/free-solid-svg-icons'
+import {IntlProvider} from 'react-intl-redux'
 
 import rootRoutes from '@routes/index';
 import createStore from '@store/createStore'
@@ -13,8 +12,6 @@ import './Main.scss'
 const store = createStore(window.__INITIAL_STATE__);
 const $ROOT_NODE = document.getElementById('app-root')
 const routes = rootRoutes(store);
-
-library.add(faIgloo);
 
 class Main extends Component {
   render() {
@@ -36,7 +33,9 @@ class Main extends Component {
 render((
   <Provider store={store}>
     <Router children={routes}>
-      <Main/>
+      <IntlProvider key={store.getState().intl.locale}>
+        <Main/>
+      </IntlProvider>
     </Router>
   </Provider>
 ), $ROOT_NODE);

@@ -3,7 +3,10 @@ import {connect} from 'react-redux'
 
 import Brand from "@shared/ui/Brand/Brand";
 import {toggleMenu} from '@store/actions/toggleMenuAction'
+import { urlRoutes } from '@constants/initialAppState'
 import './SideBarContainer.scss';
+import ListItem from "./ui/ListItem/ListItem";
+import SettingItem from "./ui/SettingItem/SettingItem";
 
 @connect(props => ({
   isShow: props.menu.toggleMenu
@@ -43,10 +46,17 @@ export default class SideBarContainer extends Component {
 
   render() {
     const {isShow} = this.props;
+
     return (
       <div ref={this.$myRef}
            className={isShow ? 'side-bar-container on-show' : 'side-bar-container'}>
         <Brand/>
+        <ul>
+          {urlRoutes.filter(item => item.isUsage).map((item, idx) =>
+            <ListItem key={`nav-item-${idx}`} title={item.title} path={item.path} />
+          )}
+          <SettingItem />
+        </ul>
       </div>
     )
   }

@@ -1,0 +1,31 @@
+.nav-list-item{
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  border-bottom: .1rem solid #202125;
+  text-align: left;
+
+  justify-content: left;
+  align-items: baseline;
+  padding-left: 1rem;
+
+  & > span{
+    display: block;
+    width: 3.2rem;
+    text-align: center;
+    height: auto;
+  }
+  & > a{
+    display: block;
+    line-height: 45px;
+    position: relative;
+    color: #999;
+    text-decoration: none;
+    padding-left: .5rem;
+
+    & > a.active,
+    & > a:hover{
+      color: #fff;
+    }
+  }
+}
