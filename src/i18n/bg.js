@@ -1,7 +1,7 @@
 export default {
   "app:nav:title:home": "Начало",
   "app:nav:title:movies": "Филми",
-  "app:nav:title:tv:shows": "Сериали",
+  "app:nav:title:tv-shows": "Сериали",
   "app:nav:title:about": "Информация",
   "app:nav:title:settings": "Настройки",
   "app:nav:title:search": "Tърсене",

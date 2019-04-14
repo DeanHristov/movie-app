@@ -19,8 +19,7 @@ export default class ListItem extends Component {
       case 'search': {
         return <FontAwesomeIcon icon={faSearch} color={'#999'} />
       }
-      case 'movies':
-      case 'movie': {
+      case 'tv-shows': {
         return <FontAwesomeIcon icon={faTv} color={'#999'} />
       }
     }

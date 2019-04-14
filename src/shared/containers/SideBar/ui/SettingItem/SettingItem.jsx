@@ -8,12 +8,12 @@ import { togglePanel } from '@store/actions/settingPanelActions';
 import './SettingItem.scss'
 
 @connect(null, dispatch => ({
-  doShowPanell : state => dispatch(togglePanel(state))
+  doShowPanel : state => dispatch(togglePanel(state))
 }))
 export default class SettingItem extends Component {
 
   onClick () {
-    this.props.doShowPanell(true);
+    this.props.doShowPanel(true);
   }
   render() {
     return (

@@ -1,12 +1,9 @@
 import LocaleLoader from "./LocaleLoader";
 
-export const movieState = {
-    movies: [
-    ],
-    movieModal: {
-        isOpen: false
-    }
-}
+export const moviesState = {
+  movies: {},
+  tvShows: {}
+};
 
 export const userState = {
     isLogged: false,
@@ -25,49 +22,47 @@ export const userState = {
         sha256: null
       }
     }
-}
+};
 
 export const LOCAL_STORAGE = {
   LOCALE: 'app:locale'
-}
+};
 
 export const settingPanelState = {
   togglePanel: false
-}
+};
 export const intlState = {
     languages: ['en', 'bg'],
     locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
     messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
-}
+};
 
 export const initMenuState = {
   toggleMenu: false
-}
+};
 
 export const requestState = {
   // In this time the UI have to trigger some kind of state like 'spinner'
   isFetching: false,
 
+  isFetched: false,
+
   // There should be: 'error' or 'success'
   status: null,
 
-  // Populate it only if the status is 'error'
-  error: null,
 
   // Store timestamp
   lastUpdated: null,
 
-  //
-  url: null,
-
-  data: []
-};
+  // Later it will be using for a caching
+  data: {}
+};;
 
 export const urlRoutes = [
   {path: '/', title: 'home', isUsage: true},
+  {path: '/tv-shows', title: 'tv-shows', isUsage: true},
   {path: '/login', title: 'login', isUsage: false},
   {path: '/search', title: 'search', isUsage: true},
   {path: '/:movieId', title: 'movie', isUsage: false},
-  {path: '/movies', title: 'movies', isUsage: true},
   {path: '/about', title: 'about', isUsage: true},
 ];
