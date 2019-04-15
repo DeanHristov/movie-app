@@ -29,7 +29,7 @@ export default class TVShowsContainer extends Component {
 
   render() {
     return (
-      <div id={'tv-shows-container'} />
+      <div id={'tv-shows-container grid-view'} />
     )
   }
 }

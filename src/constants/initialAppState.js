@@ -56,7 +56,7 @@ export const requestState = {
 
   // Later it will be using for a caching
   data: {}
-};;
+};
 
 export const urlRoutes = [
   {path: '/', title: 'home', isUsage: true},
