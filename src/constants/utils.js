@@ -1,6 +1,6 @@
-export const catchRequestError =  (res ) => {
-  if (!res.ok) {
-    return false;
+export const catchRequestError = res => {
+  if(res.hasOwnProperty('success') && !res.success)
+    return Promise.reject(res);
 
-  }
+  return res;
 }

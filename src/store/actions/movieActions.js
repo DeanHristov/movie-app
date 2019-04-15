@@ -12,15 +12,17 @@ export const FETCH_TV_SHOWS_SUCCESS = 'FETCH_TV_SHOWS_SUCCESS';
 export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
   dispatch({type: FETCH_MOVIES_REQUEST});
 
-  // TODO add catch functionality
+  // // TODO add catch functionality
   fetch(`${API_URL}/movie/top_rated?api_key=${API_KEY}&language=${lang}&page=${page}`)
     .then(res => res.json())
-    .then(res => {
-      dispatch({
-        type: FETCH_MOVIES_SUCCESS,
-        payload: res
-      })
-    })
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: FETCH_MOVIES_SUCCESS,
+      payload: data
+    })).catch(reason => dispatch({
+    type: FETCH_MOVIES_FAILURE,
+    payload: reason
+  }))
 
 };
 
@@ -30,11 +32,13 @@ export const fetchPopularTVShows = ({lang = 'en', page = 1}) => dispatch => {
 
   fetch(`${API_URL}/tv/popular?api_key=${API_KEY}&language=${lang}&page=${page}`)
     .then(res => res.json())
-    .then(res => {
-      dispatch({
-        type: FETCH_TV_SHOWS_SUCCESS,
-        payload: res
-      })
-    })
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: FETCH_TV_SHOWS_SUCCESS,
+      payload: data
+    })).catch(reason => dispatch({
+    type: FETCH_TV_SHOWS_FAILURE,
+    payload: reason
+  }))
 };
 
