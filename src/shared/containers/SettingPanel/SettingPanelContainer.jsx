@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { togglePanel } from '@store/actions/settingPanelActions';
+import { togglePanel } from '@store/actions/appConfigActions';
 import LanguagePanel from '@shared/ui/Language/LanguagePanel'
 import './SettingPanelContainer.scss';
 import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";

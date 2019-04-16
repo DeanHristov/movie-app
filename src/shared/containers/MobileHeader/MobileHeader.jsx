@@ -3,11 +3,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome/index'
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
 import {connect} from 'react-redux';
 
-import {toggleMenu} from '@store/actions/toggleMenuAction'
+import {toggleMenu} from '@store/actions/appConfigActions'
 import './MobileHeader.scss'
 
 @connect(props => ({
-  toggleMenu: props.menu.toggleMenu
+  toggleMenu: props.appConfig.toggleMenu
 }), dispatch => ({
   changeTo: newState => dispatch(toggleMenu(newState))
 }))

@@ -2,14 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import Brand from "@shared/ui/Brand/Brand";
-import {toggleMenu} from '@store/actions/toggleMenuAction'
+import {toggleMenu} from '@store/actions/appConfigActions'
 import { urlRoutes } from '@constants/initialAppState'
 import './SideBarContainer.scss';
 import ListItem from "./ui/ListItem/ListItem";
 import SettingItem from "./ui/SettingItem/SettingItem";
 
 @connect(props => ({
-  isShow: props.menu.toggleMenu
+  isShow: props.appConfig.toggleMenu
 }), dispatch => ({
   changeTo: newState => dispatch(toggleMenu(newState))
 }))

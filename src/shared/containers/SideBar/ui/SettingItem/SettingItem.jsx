@@ -4,7 +4,7 @@ import {faCogs} from "@fortawesome/free-solid-svg-icons/faCogs";
 import {FormattedMessage} from "react-intl";
 import {connect} from "react-redux";
 
-import { togglePanel } from '@store/actions/settingPanelActions';
+import { togglePanel } from '@store/actions/appConfigActions';
 import './SettingItem.scss'
 
 @connect(null, dispatch => ({

@@ -24,8 +24,7 @@ export default (state = requestState, action) => {
           statusCode: status_code,
           message: status_message
         },
-        lastUpdated: (new Date()).getTime(),
-        data: null
+        lastUpdated: (new Date()).getTime()
       }
     }
 
@@ -37,8 +36,7 @@ export default (state = requestState, action) => {
         status: {
           type: 'success'
         },
-        lastUpdated: (new Date()).getTime(),
-        data: action.payload
+        lastUpdated: (new Date()).getTime()
       }
     }
 

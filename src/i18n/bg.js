@@ -11,5 +11,7 @@ export default {
 
   'app:movies:page:title': 'Най-високо оценени филми',
   'app:movies:element:rated': 'Харесвания: { count }',
-  'app:tv-shows:page:title': 'Популярни TV сериали'
+  'app:tv-shows:page:title': 'Популярни TV сериали',
+
+  'app:search:placeholder:title': 'Търсене...'
 }

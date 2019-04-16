@@ -28,17 +28,10 @@ export const LOCAL_STORAGE = {
   LOCALE: 'app:locale'
 };
 
-export const settingPanelState = {
-  togglePanel: false
-};
 export const intlState = {
     languages: ['en', 'bg'],
     locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
     messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
-};
-
-export const initMenuState = {
-  toggleMenu: false
 };
 
 export const requestState = {
@@ -52,17 +45,17 @@ export const requestState = {
 
 
   // Store timestamp
-  lastUpdated: null,
+  lastUpdated: null
+};
 
-  // Later it will be using for a caching
-  data: {}
+export const appConfigState = {
+  toggleSideBar: false,
+  toggleSearchField: false,
+  togglePanel: false
 };
 
 export const urlRoutes = [
   {path: '/', title: 'home', isUsage: true},
   {path: '/tv-shows', title: 'tv-shows', isUsage: true},
-  {path: '/login', title: 'login', isUsage: false},
-  {path: '/search', title: 'search', isUsage: true},
-  {path: '/:movieId', title: 'movie', isUsage: false},
-  {path: '/about', title: 'about', isUsage: true},
+  {path: '/login', title: 'login', isUsage: false}
 ];

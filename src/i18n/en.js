@@ -11,6 +11,8 @@ export default {
 
   'app:movies:page:title': 'Top rated movies',
   'app:movies:element:rated': 'Rated: { count }',
-  'app:tv-shows:page:title': 'Popular TV shows'
+  'app:tv-shows:page:title': 'Popular TV shows',
+
+  'app:search:placeholder:title': 'Search...'
 }
 

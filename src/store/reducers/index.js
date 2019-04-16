@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux'
 
-import userReducer from './userReducer';
-import movieReducer from './movieReducer';
-import locationReducer from './locationReducer'
-import intlReducer from './intlReducer';
-import requestReducer from './requestReducer';
-import toggleMenuReducer from "./toggleMenuReducer";
-import settingPanelReducer from "./settingPanelReducer";
+import appConfigReducer from "@store/reducers/appConfigReducer";
+import movieReducer from "@store/reducers/movieReducer";
+import userReducer from "@store/reducers/userReducer";
+import locationReducer from "@store/reducers/locationReducer";
+import requestReducer from "@store/reducers/requestReducer";
+import intlReducer from "@store/reducers/intlReducer";
 
 export default combineReducers({
     movies: movieReducer,
@@ -14,6 +13,5 @@ export default combineReducers({
     location: locationReducer,
     intl: intlReducer,
     request: requestReducer,
-    menu: toggleMenuReducer,
-    settingPanel: settingPanelReducer
+    appConfig: appConfigReducer
 })

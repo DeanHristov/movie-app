@@ -17,7 +17,7 @@ const routes = rootRoutes(store);
 
 
 @connect(props => ({
-  togglePanel : props.settingPanel.togglePanel
+  togglePanel : props.appConfig.togglePanel
 }))
 class Main extends Component {
   render() {
