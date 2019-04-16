@@ -18,7 +18,9 @@ export default class Pagination extends Component {
         className={isDisabled ? 'btn btn-pagination disabled' : 'btn btn-pagination' }
         onClick={gotoPrev}>
         <FontAwesomeIcon icon={faStepBackward} size={'1x'} color={'#fff'}/>
-        <FormattedMessage id={'app:pagination:btn:prev'} />
+        <FormattedMessage id={'app:pagination:btn:prev'} values={{
+          page: isDisabled ? null : context.current - 1
+        }}/>
       </button>
     )
   }
@@ -32,7 +34,9 @@ export default class Pagination extends Component {
         className={isDisabled ? 'btn btn-pagination disabled' : 'btn btn-pagination' }
         onClick={gotoNext} >
         <FontAwesomeIcon icon={faStepForward} size={'1x'} color={'#fff'}/>
-        <FormattedMessage id={'app:pagination:btn:next'} />
+        <FormattedMessage id={'app:pagination:btn:next'} values={{
+          page: isDisabled ? null : context.current + 1
+        }} />
       </button>
     )
   }

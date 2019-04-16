@@ -15,8 +15,8 @@ export default {
 
   'app:search:placeholder:title': 'Search...',
 
-  'app:pagination:btn:next': 'Next',
-  'app:pagination:btn:prev': 'Previous',
+  'app:pagination:btn:next': 'Next { page }',
+  'app:pagination:btn:prev': 'Previous { page } ',
 
 }
 
