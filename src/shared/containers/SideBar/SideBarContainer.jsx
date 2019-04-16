@@ -29,13 +29,6 @@ export default class SideBarContainer extends Component {
     window.removeEventListener('resize', ::this.onResize)
   }
 
-  componentWillReceiveProps({ isShow }) {
-    if (isShow)
-      document.body.classList.add('on-overlay')
-    else
-      document.body.classList.remove('on-overlay')
-  }
-
   onResize () {
     const {innerWidth} = window;
 

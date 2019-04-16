@@ -4,6 +4,10 @@ export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
 export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
 export const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
 
+export const SEARCH_TV_ITEM_REQUEST = 'SEARCH_TV_ITEM_REQUEST';
+export const SEARCH_TV_ITEM_FAILURE = 'SEARCH_TV_ITEM_FAILURE';
+export const SEARCH_TV_ITEM_SUCCESS = 'SEARCH_TV_ITEM_SUCCESS';
+
 
 export const FETCH_TV_SHOWS_REQUEST = 'FETCH_TV_SHOWS_REQUEST';
 export const FETCH_TV_SHOWS_FAILURE = 'FETCH_TV_SHOWS_FAILURE';
@@ -12,7 +16,7 @@ export const FETCH_TV_SHOWS_SUCCESS = 'FETCH_TV_SHOWS_SUCCESS';
 export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
   dispatch({type: FETCH_MOVIES_REQUEST});
 
-  // // TODO add catch functionality
+
   fetch(`${API_URL}/movie/top_rated?api_key=${API_KEY}&language=${lang}&page=${page}`)
     .then(res => res.json())
     .then(catchRequestError)
@@ -42,3 +46,22 @@ export const fetchPopularTVShows = ({lang = 'en', page = 1}) => dispatch => {
   }))
 };
 
+
+
+export const searchTVByQuery = ({lang = 'en', query = null, context = null}) => dispatch => {
+  if (!query || !context) return; // We block searching with empty query
+
+  dispatch({type: SEARCH_TV_ITEM_REQUEST});
+
+  fetch(`${API_URL}/search/${context}?api_key=${API_KEY}&language=${lang}&query=${query}`)
+    .then(res => res.json())
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: SEARCH_TV_ITEM_SUCCESS,
+      payload: data
+    })).catch(reason => dispatch({
+    type: SEARCH_TV_ITEM_FAILURE,
+    payload: reason
+  }))
+
+};
