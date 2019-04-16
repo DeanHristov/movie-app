@@ -25,9 +25,10 @@
       transition: .35s ease-out 0s;
     }
     & > span {
+      width: 100%;
+      padding-right: 0;
+      word-break: break-all;
       display: block;
-      width: calc(100% - 3rem);
-      padding-right: 1rem;
     }
 
     & > svg{
@@ -52,6 +53,12 @@
     .movies-header{
       margin-top: 6.8rem !important;
       padding: 1rem .5rem;
+
+      & > span{
+        width: calc(100% - 3rem);
+        padding-right: 1rem;
+      }
+
       & > svg{
         display: block;
       }
