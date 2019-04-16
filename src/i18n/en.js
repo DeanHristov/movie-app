@@ -7,6 +7,10 @@ export default {
   "app:nav:title:search": 'Search',
   'app:nav:languages:en': 'EN',
   'app:nav:languages:bg': 'BG',
-  'app:nav:languages:title': 'Language'
+  'app:nav:languages:title': 'Language',
+
+  'app:movies:page:title': 'Top rated movies',
+  'app:movies:element:rated': 'Rated: { count }',
+  'app:tv-shows:page:title': 'Popular TV shows'
 }
 

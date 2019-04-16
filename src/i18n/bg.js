@@ -7,5 +7,9 @@ export default {
   "app:nav:title:search": "Tърсене",
   'app:nav:languages:en': 'EN',
   'app:nav:languages:bg': 'BG',
-  'app:nav:languages:title': 'Език'
+  'app:nav:languages:title': 'Език',
+
+  'app:movies:page:title': 'Най-високо оценени филми',
+  'app:movies:element:rated': 'Харесвания: { count }',
+  'app:tv-shows:page:title': 'Популярни TV сериали'
 }

@@ -1,0 +1,20 @@
+.slide-up-in{
+  -webkit-animation-name: slide-up-fade-in;
+  -webkit-animation-duration: .7s;
+  //-webkit-animation-delay: 2s;
+
+  animation-name: slide-up-fade-in;
+  animation-duration: .7s;
+  //animation-delay: 2s;
+}
+
+@keyframes slide-up-fade-in{
+  0% {
+    opacity:0;
+    transform:  translate(0px,40px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}

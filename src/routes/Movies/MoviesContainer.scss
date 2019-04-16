@@ -1,0 +1,43 @@
+.movies-container{
+  width: 100%;
+  min-width: 31rem;
+  height: auto;
+
+  margin-top: 5rem;
+  padding: 1rem;
+
+  .movies-header{
+    width: 100%;
+    height: auto;
+
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    padding: 1rem .5rem;
+
+    color: #353535;
+    text-transform: uppercase;
+    border-bottom: 0.1rem solid #ccc;
+  }
+
+  .movie-view{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .movies-container{
+    margin-top: 0;
+    margin-left: 20rem;
+    width: calc(100% - 20rem);
+
+    .movie-view,
+    .movies-header{
+      max-width: 118rem;
+      margin: 0 auto;
+    }
+  }
+}
