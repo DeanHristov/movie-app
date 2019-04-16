@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index'
+import {faSearch} from "@fortawesome/free-solid-svg-icons/index";
 import {FormattedMessage} from "react-intl";
 import {connect} from "react-redux";
 
@@ -53,7 +53,7 @@ export default class SearchField extends Component {
   }
 
   render() {
-    const { isVisible, context } = this.props;
+    const { isVisible } = this.props;
 
     return (
       <div className={isVisible ? 'search-field-item flex-row on-show' : 'search-field-item flex-row' }>
