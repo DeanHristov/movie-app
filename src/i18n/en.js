@@ -13,6 +13,10 @@ export default {
   'app:movies:element:rated': 'Rated: { count }',
   'app:tv-shows:page:title': 'Popular TV shows',
 
-  'app:search:placeholder:title': 'Search...'
+  'app:search:placeholder:title': 'Search...',
+
+  'app:pagination:btn:next': 'Next',
+  'app:pagination:btn:prev': 'Previous',
+
 }
 

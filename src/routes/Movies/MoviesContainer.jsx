@@ -9,6 +9,7 @@ import MovieCardItem from "@routes/Movies/ui/MovieCard/MovieCardItem";
 import {FormattedMessage} from "react-intl";
 import SearchField from "@routes/Movies/ui/Search/SearchField";
 import './MoviesContainer.scss';
+import Pagination from "@shared/ui/Pagination/Pagination";
 
 
 @connect(props => ({
@@ -42,11 +43,17 @@ export default class MoviesContainer extends Component {
   }
 
   gotoNextPage () {
-
+    const { movies } = this.props;
+    this.props.fetchMovies({
+      page: ++movies.page
+    })
   }
 
   gotoPrevPage () {
-
+    const { movies } = this.props;
+    this.props.fetchMovies({
+      page: --movies.page
+    })
   }
 
   onTriggerSearchForm () {
@@ -70,11 +77,17 @@ export default class MoviesContainer extends Component {
             onClick={::this.onTriggerSearchForm}/>
         </header>
         <SearchField context={'movie'}/>
-        <section className={'movie-view slide-up-in'}>
+        <section className={'movie-body slide-up-in'}>
           {movies.results.map((movie, idx) =>
             <MovieCardItem {...movie} key={`movie-item-${idx}`} />
           )}
         </section>
+        <footer className={'movie-footer'}>
+          <Pagination
+            context={{ current: movies.page, total: movies.total_pages }}
+            gotoPrev={::this.gotoPrevPage}
+            gotoNext={::this.gotoNextPage} />
+        </footer>
       </div>
     )
   }

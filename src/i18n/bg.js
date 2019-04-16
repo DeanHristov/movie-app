@@ -13,5 +13,9 @@ export default {
   'app:movies:element:rated': 'Харесвания: { count }',
   'app:tv-shows:page:title': 'Популярни TV сериали',
 
-  'app:search:placeholder:title': 'Търсене...'
+  'app:search:placeholder:title': 'Търсене...',
+
+  'app:pagination:btn:next': 'Следваща',
+  'app:pagination:btn:prev': 'Предишена',
+
 }

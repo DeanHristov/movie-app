@@ -37,7 +37,7 @@
     }
   }
 
-  .movie-view{
+  .movie-body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -64,7 +64,7 @@
       }
     }
 
-    .movie-view,
+    .movie-body,
     .movies-header{
       max-width: 118rem;
       margin: 0 auto;
