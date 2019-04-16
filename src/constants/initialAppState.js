@@ -1,7 +1,9 @@
 import LocaleLoader from "./LocaleLoader";
 
 export const moviesState = {
+  oldMovies: {},
   movies: {},
+  oldTVShows: {},
   tvShows: {}
 };
 

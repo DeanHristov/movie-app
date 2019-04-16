@@ -11,6 +11,7 @@ import {
 } from "@store/actions/movieActions";
 import {deBounce} from "@constants/utils";
 import './SearchField.scss';
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 @connect(props => ({
   isVisible: props.appConfig.toggleSearchField,
@@ -22,15 +23,20 @@ import './SearchField.scss';
 }))
 export default class SearchField extends Component {
 
+  state = {
+    isTyped: false
+  }
+
+
   doSearchTVItem() {
     const { locale, context } = this.props;
     const { value } = this.$searchField;
 
-    this.props.searchTVItem({
+    this.setState({ isTyped: true }, () => this.props.searchTVItem({
       query: value.trim(),
       lang: locale,
       context
-    });
+    }));
 
     if (!value.trim()) this.doReset()
 
@@ -52,8 +58,16 @@ export default class SearchField extends Component {
     }
   }
 
+  onReset() {
+    this.setState({ isTyped: false }, () => {
+      this.$searchField.value = null;
+      this.props.onReset()
+    })
+  }
+
   render() {
     const { isVisible } = this.props;
+    const { isTyped } = this.state;
 
     return (
       <div className={isVisible ? 'search-field-item flex-row on-show' : 'search-field-item flex-row' }>
@@ -71,7 +85,12 @@ export default class SearchField extends Component {
             />
           )}
         </FormattedMessage>
-        <FontAwesomeIcon icon={faSearch} size={'1x'} color={'#bbb'}/>
+        <FontAwesomeIcon
+          icon={!isTyped ? faSearch : faTimes}
+          size={'1x'}
+          color={'#bbb'}
+          onClick={::this.onReset}
+        />
       </div>
     )
   }

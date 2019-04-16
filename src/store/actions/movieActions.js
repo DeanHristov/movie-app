@@ -13,6 +13,8 @@ export const FETCH_TV_SHOWS_REQUEST = 'FETCH_TV_SHOWS_REQUEST';
 export const FETCH_TV_SHOWS_FAILURE = 'FETCH_TV_SHOWS_FAILURE';
 export const FETCH_TV_SHOWS_SUCCESS = 'FETCH_TV_SHOWS_SUCCESS';
 
+export const ON_RESET_MOVIES = 'ON_RESET_MOVIES';
+
 export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
   dispatch({type: FETCH_MOVIES_REQUEST});
 
