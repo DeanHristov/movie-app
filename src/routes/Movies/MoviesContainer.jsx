@@ -7,9 +7,9 @@ import { fetchTopRatedMovies } from '@store/actions/movieActions';
 import { toggleSearchForm } from '@store/actions/appConfigActions';
 import MovieCardItem from "@routes/Movies/ui/MovieCard/MovieCardItem";
 import {FormattedMessage} from "react-intl";
-import SearchField from "@routes/../../shared/containers/Search/SearchField";
 import './MoviesContainer.scss';
 import Pagination from "@shared/ui/Pagination/Pagination";
+import SearchField from "@shared/containers/Search/SearchField";
 
 
 @connect(props => ({
