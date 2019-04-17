@@ -15,7 +15,7 @@ export default {
 
   'app:search:placeholder:title': 'Search...',
 
-  'app:pagination:btn:next': 'Next { page }',
+  'app:pagination:btn:next': 'Next { page } of { total }',
   'app:pagination:btn:prev': 'Previous { page } ',
 
   'app:modal-box:button:close': 'Close'

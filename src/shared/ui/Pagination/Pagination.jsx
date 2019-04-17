@@ -35,7 +35,8 @@ export default class Pagination extends Component {
         onClick={gotoNext} >
         <FontAwesomeIcon icon={faStepForward} size={'1x'} color={'#fff'}/>
         <FormattedMessage id={'app:pagination:btn:next'} values={{
-          page: isDisabled ? null : context.current + 1
+          page: isDisabled ? null : context.current + 1,
+          total: context.total
         }} />
       </button>
     )

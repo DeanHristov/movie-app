@@ -15,8 +15,8 @@ export default {
 
   'app:search:placeholder:title': 'Търсене...',
 
-  'app:pagination:btn:next': 'Next { page }',
-  'app:pagination:btn:prev': 'Previous { page } ',
+  'app:pagination:btn:next': 'Следваща { page } от { total }',
+  'app:pagination:btn:prev': 'Предишна { page } ',
 
   'app:modal-box:button:close': 'Затвори'
 
