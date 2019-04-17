@@ -1,7 +1,7 @@
 $cube-loader-size: 8rem;
 $cycle-loader-size: 12rem;
 
-@mixin calc-preloader-size ($size, $bg-color: #fff) {
+@mixin calc-preloader-size ($size, $bg-color: transperant) {
   width: $size;
   height:$size;
   position: fixed;
@@ -25,13 +25,13 @@ $cycle-loader-size: 12rem;
 
   border-radius: 50%;
   border: 1rem solid #f3f3f3;
-  border-top: 1rem solid #00A3E1;
-  border-bottom: 1rem solid #00A3E1;
+  border-top: 1rem solid rgba(246, 160, 33, 0.6);
+  border-bottom: 1rem solid rgba(246, 160, 33, 0.6);
 
   animation: cycle-loader 2s linear infinite;
 }
 .cube-loader{
-  @include calc-preloader-size($cube-loader-size, #d35400);
+  @include calc-preloader-size($cube-loader-size, rgba(246, 160, 33, 0.6));
 
   -webkit-animation: cube-loader 1.2s infinite ease-in-out;
   animation: cube-loader 1.2s infinite ease-in-out;

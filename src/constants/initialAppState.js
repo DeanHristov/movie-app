@@ -53,7 +53,13 @@ export const requestState = {
 export const appConfigState = {
   toggleSideBar: false,
   toggleSearchField: false,
-  togglePanel: false
+  togglePanel: false,
+  toggleModalBox: false,
+  youtubePlayer: {
+    autoplay: false,
+    width: 640,
+    height: 380
+  }
 };
 
 export const urlRoutes = [
