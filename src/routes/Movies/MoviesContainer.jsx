@@ -40,7 +40,12 @@ export default class MoviesContainer extends Component {
   }
 
   componentWillReceiveProps({ movies }) {
-    this.setState({ movies })
+    this.setState({
+      movies: {
+        ...this.state.movies,
+        ...movies
+      }
+    })
   }
 
   gotoNextPage () {
@@ -79,16 +84,16 @@ export default class MoviesContainer extends Component {
             onClick={::this.onTriggerSearchForm}/>
         </header>
         <SearchField onReset={::this.props.doReset} context={'movie'}/>
-        <section className={'movie-body slide-up-in'}>
+        <section className={'movie-body'}>
           {movies.results.map((movie, idx) =>
             <MovieCardItem {...movie} key={`movie-item-${idx}`} />
           )}
         </section>
         <footer className={'movie-footer'}>
-          <Pagination
+          { movies.results.length > 0 ? <Pagination
             context={{ current: movies.page, total: movies.total_pages }}
             gotoPrev={::this.gotoPrevPage}
-            gotoNext={::this.gotoNextPage} />
+            gotoNext={::this.gotoNextPage} /> : null }
         </footer>
       </div>
     )

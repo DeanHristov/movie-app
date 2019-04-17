@@ -81,7 +81,7 @@ export default class SearchField extends Component {
               maxLength={250}
               minLength={4}
               placeholder={messageText}
-              onKeyUp={deBounce(::this.doSearchTVItem, 1500)}
+              onKeyUp={deBounce(::this.doSearchTVItem, 700)}
             />
           )}
         </FormattedMessage>

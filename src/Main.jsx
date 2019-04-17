@@ -8,23 +8,27 @@ import rootRoutes from '@routes/index';
 import createStore from '@store/createStore'
 import HeaderContainer from "@shared/containers/Header/HeaderContainer";
 import SettingPanelContainer from "@shared/containers/SettingPanel/SettingPanelContainer";
+import Preloader from "@shared/ui/Preloader/Preloader";
+
 import './Main.scss'
 
 
 const store = createStore(window.__INITIAL_STATE__);
-const $ROOT_NODE = document.getElementById('app-root')
+const $ROOT_NODE = document.getElementById('app-root');
 const routes = rootRoutes(store);
 
 
 @connect(props => ({
-  togglePanel : props.appConfig.togglePanel
+  togglePanel : props.appConfig.togglePanel,
+  req: props.request
 }))
 class Main extends Component {
   render() {
-    const { togglePanel } = this.props;
+    const { togglePanel, req } = this.props;
     return (
       <div className="app-container">
         {togglePanel? <SettingPanelContainer/> : null}
+        {req.isFetching && !req.isFetched ? <Preloader/> : null }
         <HeaderContainer/>
         {routes.map((route, idx) =>
           <Route
