@@ -1,4 +1,5 @@
 import {catchRequestError} from '@constants/utils'
+import React from "react";
 
 export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
 export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
@@ -8,6 +9,9 @@ export const SEARCH_TV_ITEM_REQUEST = 'SEARCH_TV_ITEM_REQUEST';
 export const SEARCH_TV_ITEM_FAILURE = 'SEARCH_TV_ITEM_FAILURE';
 export const SEARCH_TV_ITEM_SUCCESS = 'SEARCH_TV_ITEM_SUCCESS';
 
+export const GET_TV_TRAILER_REQUEST = 'GET_TV_TRAILER_REQUEST';
+export const GET_TV_TRAILER_FAILURE = 'GET_TV_TRAILER_FAILURE';
+export const GET_TV_TRAILER_SUCCESS = 'GET_TV_TRAILER_SUCCESS';
 
 export const FETCH_TV_SHOWS_REQUEST = 'FETCH_TV_SHOWS_REQUEST';
 export const FETCH_TV_SHOWS_FAILURE = 'FETCH_TV_SHOWS_FAILURE';
@@ -49,7 +53,6 @@ export const fetchPopularTVShows = ({lang = 'en', page = 1}) => dispatch => {
 };
 
 
-
 export const searchTVByQuery = ({lang = 'en', query = null, context = null}) => dispatch => {
   if (!query || !context) return; // We block searching with empty query
 
@@ -67,3 +70,22 @@ export const searchTVByQuery = ({lang = 'en', query = null, context = null}) => 
   }))
 
 };
+
+export const getTVTrailer = (props) => dispatch => {
+  if (!props.movieId || !props.context) return;
+
+  dispatch({type: GET_TV_TRAILER_REQUEST});
+
+  fetch(`${API_URL}/${props.context}/${props.movieId}/videos?api_key=${API_KEY}&language=${props.lang}`)
+    .then(res => res.json())
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: GET_TV_TRAILER_SUCCESS,
+      payload: { ...props, results: data.results}
+    })).catch(reason => dispatch({
+    type: GET_TV_TRAILER_FAILURE,
+    payload: reason
+  }))
+}
+
+

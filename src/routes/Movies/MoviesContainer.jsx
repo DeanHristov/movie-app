@@ -89,7 +89,7 @@ export default class MoviesContainer extends Component {
             <MovieCardItem {...movie} key={`movie-item-${idx}`} />
           )}
         </section>
-        <footer className={'movie-footer'}>
+        <footer className={'movie-footer slide-up-in'}>
           { movies.results.length > 0 ? <Pagination
             context={{ current: movies.page, total: movies.total_pages }}
             gotoPrev={::this.gotoPrevPage}

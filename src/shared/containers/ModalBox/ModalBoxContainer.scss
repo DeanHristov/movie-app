@@ -13,6 +13,7 @@
   z-index: 6;
 
   .modal-box-container{
+    width: 90%;
     min-width: 32rem;
     height: auto;
     z-index: 12;
@@ -21,6 +22,13 @@
     border: .1rem solid #ccc;
 
 
+    .md-title{
+      color: #353535;
+      text-transform: capitalize;
+      font-size: 1.8rem;
+      text-align: center;
+      text-decoration: underline;
+    }
     .modal-box-header,
     .modal-box-body,
     .modal-box-footer{
@@ -48,6 +56,14 @@
       color: #fff;
       font-size: 1.8rem;
       border: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-box-overlay{
+    .modal-box-container{
+      width: 64rem;
     }
   }
 }

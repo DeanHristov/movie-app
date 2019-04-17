@@ -9,6 +9,7 @@ import createStore from '@store/createStore'
 import HeaderContainer from "@shared/containers/Header/HeaderContainer";
 import SettingPanelContainer from "@shared/containers/SettingPanel/SettingPanelContainer";
 import Preloader from "@shared/ui/Preloader/Preloader";
+import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
 
 import './Main.scss'
 
@@ -29,6 +30,7 @@ class Main extends Component {
       <div className="app-container">
         {togglePanel? <SettingPanelContainer/> : null}
         {req.isFetching && !req.isFetched ? <Preloader/> : null }
+        <ModalBoxDispatcher />
         <HeaderContainer/>
         {routes.map((route, idx) =>
           <Route

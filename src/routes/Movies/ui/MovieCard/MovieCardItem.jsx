@@ -4,18 +4,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './MovieCardItem.scss';
 import {faArrowRight, faPlay} from "@fortawesome/free-solid-svg-icons/";
 import {FormattedMessage} from "react-intl";
+import {connect} from "react-redux";
+import {getTVTrailer} from "@store/actions/movieActions";
 
 
-
+@connect(props => ({
+  lang: props.intl.locale,
+  player: props.appConfig.youtubePlayer,
+}), dispatch => ({
+  onPlayTrailer: params => dispatch(getTVTrailer(params))
+}))
 export default class MovieCardItem extends Component {
 
   playTrailer(){
-    console.log('clicked...')
+    const { id, lang } = this.props;
+
+    this.props.onPlayTrailer({
+      movieId: id,
+      autoplay: 1,
+      context: 'movie',
+      lang
+    })
   }
   render() {
     const {
       original_title, poster_path,
-      vote_count, overview, daley
+      vote_count, player
     } = this.props;
 
     return (

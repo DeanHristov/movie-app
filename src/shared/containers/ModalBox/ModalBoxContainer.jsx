@@ -13,19 +13,25 @@ import {toggleModalBox} from "@store/actions/appConfigActions";
 export default class ModalBoxContainer extends Component {
 
   render() {
+    const { title, children } = this.props;
     return (
       <div className={'modal-box-overlay'} ref={ node => this.$overlay = node}>
         <div
           ref={ node => this.$container = node}
-          className={'modal-box-container slide-up-fade-in'} >
-          <header className={'modal-box-header'} />
+          className={'modal-box-container slide-up-in'} >
+          <header className={'modal-box-header'} >
+            <h3 className={'mb-title'}>{ title }</h3>
+          </header>
           <section className={'modal-box-body'} >
-            {this.props.children}
+            { children }
           </section>
           <footer className={'modal-box-footer'}>
             <button
               className={'mb-button-close'}
-              onClick={() => this.props.onDestroy()} >
+              onClick={() => this.props.onDestroy({
+                isShow: false,
+                type: null
+              })} >
               <FontAwesomeIcon icon={faTimes} size={'1x'} color={'#fff'}/>
               <FormattedMessage id={'app:modal-box:button:close'} />
             </button>

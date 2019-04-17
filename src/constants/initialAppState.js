@@ -54,11 +54,13 @@ export const appConfigState = {
   toggleSideBar: false,
   toggleSearchField: false,
   togglePanel: false,
-  toggleModalBox: false,
+  modalBox: {
+    isShow: false,
+    type: null
+  },
   youtubePlayer: {
-    autoplay: false,
-    width: 640,
-    height: 380
+    urlKeys: [],
+    autoplay: 0
   }
 };
 
