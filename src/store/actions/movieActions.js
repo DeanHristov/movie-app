@@ -17,6 +17,10 @@ export const FETCH_TV_SHOWS_REQUEST = 'FETCH_TV_SHOWS_REQUEST';
 export const FETCH_TV_SHOWS_FAILURE = 'FETCH_TV_SHOWS_FAILURE';
 export const FETCH_TV_SHOWS_SUCCESS = 'FETCH_TV_SHOWS_SUCCESS';
 
+export const GET_MOVIE_BY_ID_REQUEST = 'GET_MOVIE_BY_ID_REQUEST';
+export const GET_MOVIE_BY_ID_FAILURE = 'GET_MOVIE_BY_ID_FAILURE';
+export const GET_MOVIE_BY_ID_SUCCESS = 'GET_MOVIE_BY_ID_SUCCESS';
+
 export const ON_RESET_MOVIES = 'ON_RESET_MOVIES';
 
 export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
@@ -35,6 +39,21 @@ export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
   }))
 
 };
+
+export const fetchMovieById = ({ movieId, lang }) => dispatch => {
+  dispatch({ type: GET_MOVIE_BY_ID_REQUEST });
+
+  fetch(`${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=${lang}`)
+    .then(res => res.json())
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: GET_MOVIE_BY_ID_SUCCESS,
+      payload: data
+    })).catch(reason => dispatch({
+    type: GET_MOVIE_BY_ID_FAILURE,
+    payload: reason
+  }))
+}
 
 
 export const fetchPopularTVShows = ({lang = 'en', page = 1}) => dispatch => {

@@ -1,7 +1,8 @@
 import { moviesState } from '@constants/initialAppState'
 import {
   FETCH_MOVIES_SUCCESS, FETCH_TV_SHOWS_SUCCESS,
-  ON_RESET_MOVIES, SEARCH_TV_ITEM_SUCCESS,
+  GET_MOVIE_BY_ID_SUCCESS, ON_RESET_MOVIES,
+  SEARCH_TV_ITEM_SUCCESS,
 
 } from "@store/actions/movieActions";
 import {ON_TOGGLE_SEARCH_FORM} from "@store/actions/appConfigActions";
@@ -38,6 +39,13 @@ export default (state = moviesState, action) => {
         return {
           ...state,
           tvShows: action.payload
+        }
+      }
+
+      case GET_MOVIE_BY_ID_SUCCESS: {
+        return {
+          ...state,
+          movieDetails: action.payload
         }
       }
     }
