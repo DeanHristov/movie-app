@@ -12,11 +12,12 @@ module.exports = env => ({
         main: [
             'whatwg-fetch',
             pathResolve(`${process.cwd()}/src/Main.jsx`)
-        ]
+        ],
     },
     output: {
         filename: '[name]-bundle.js',
-        path: pathResolve(`${process.cwd()}/dist/`)
+        path: pathResolve(`${process.cwd()}/dist/`),
+      publicPath: '/'
     },
     module: {
         rules: [{
@@ -67,7 +68,7 @@ module.exports = env => ({
         host: '0.0.0.0',
         overlay: true,
         hot: true,
-        contentBase: 'dist',
+        contentBase: '/dist',
         historyApiFallback: true
     }
 });

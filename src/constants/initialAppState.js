@@ -3,8 +3,7 @@ import LocaleLoader from "./LocaleLoader";
 export const moviesState = {
   oldMovies: {},
   movies: {},
-  oldTVShows: {},
-  tvShows: {}
+  movieDetails: {}
 };
 
 export const userState = {
@@ -65,7 +64,7 @@ export const appConfigState = {
 };
 
 export const urlRoutes = [
-  {path: '/', title: 'home', isUsage: true},
+  {path: '/movies', exact: true, title: 'movies', isUsage: true},
+  {path: '/movie/:movieId', title: 'details', isUsage: false},
   {path: '/login', title: 'login', isUsage: false}
-
 ];

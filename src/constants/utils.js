@@ -1,5 +1,5 @@
 export const catchRequestError = res => {
-  if(res.hasOwnProperty('success') && !res.success)
+  if(res.hasOwnProperty('status_code') && !res.success)
     return Promise.reject(res);
 
   return res;

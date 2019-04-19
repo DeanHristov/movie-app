@@ -43,7 +43,7 @@ class Main extends Component {
               component={route.component}/>
           )}
 
-          <Route render={() => <Redirect to={'/'} />} />
+          <Route render={() => <Redirect to={'/movies'} />} />
         </Switch>
       </div>
     )

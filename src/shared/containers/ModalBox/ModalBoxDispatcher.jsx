@@ -18,6 +18,8 @@ export default class ModalBoxDispatcher extends Component {
       <div className={'modal-box-wrapper'}>
         {modalBox.isShow && modalBox.type === GET_TV_TRAILER_SUCCESS
           ? <MoviePlayer {...youtubePlayer} /> : null}
+        {modalBox.isShow && modalBox.type.lastIndexOf('FAILURE')
+          ? <MoviePlayer {...youtubePlayer} /> : null}
 
       </div>
     )
