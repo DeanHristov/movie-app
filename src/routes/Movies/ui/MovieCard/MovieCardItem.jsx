@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { Link } from 'react-router-dom'
 import './MovieCardItem.scss';
 import {faArrowRight, faPlay} from "@fortawesome/free-solid-svg-icons/";
 import {FormattedMessage} from "react-intl";
 import {connect} from "react-redux";
+
 import {getTVTrailer} from "@store/actions/movieActions";
 
 
@@ -29,7 +30,7 @@ export default class MovieCardItem extends Component {
   render() {
     const {
       original_title, poster_path,
-      vote_count, player
+      vote_count, player, id
     } = this.props;
 
     return (
@@ -43,9 +44,9 @@ export default class MovieCardItem extends Component {
               {original_title}
             </h3>
             <FormattedMessage id={'app:movies:element:rated'} values={{ count: vote_count }}/>
-            <a  href={'/movie/id'} className={'link-btn'}>
+            <Link to={`/movie/${id}`} className={'link-btn'}>
               <FontAwesomeIcon icon={faArrowRight}/>
-            </a>
+            </Link>
           </div>
           <div className={'movie-overview'}>
             <FontAwesomeIcon icon={faPlay} size={'3x'} color={'#fff'} onClick={::this.playTrailer}/>

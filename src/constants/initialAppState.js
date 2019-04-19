@@ -66,6 +66,6 @@ export const appConfigState = {
 
 export const urlRoutes = [
   {path: '/', title: 'home', isUsage: true},
-  {path: '/tv-shows', title: 'tv-shows', isUsage: true},
   {path: '/login', title: 'login', isUsage: false}
+
 ];

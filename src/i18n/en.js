@@ -18,7 +18,8 @@ export default {
   'app:pagination:btn:next': 'Next { page } of { total }',
   'app:pagination:btn:prev': 'Previous { page } ',
 
-  'app:modal-box:button:close': 'Close'
+  'app:modal-box:button:close': 'Close',
+  'app:login:btn:title': 'Login'
 
 }
 

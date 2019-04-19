@@ -1,6 +1,5 @@
 import MoviesContainer from './Movies/MoviesContainer';
 import LoginContainer from './Login/LoginContainer';
-import TVShowsContainer from "./TVShows/TVShowsContainer";
 
 import {urlRoutes} from '@constants/initialAppState'
 
@@ -8,8 +7,7 @@ import {urlRoutes} from '@constants/initialAppState'
 
 const mapComponentToRoute = {
   home: MoviesContainer,
-  login: LoginContainer,
-  ['tv-shows']: TVShowsContainer
+  login: LoginContainer
 }
 export default (store) => urlRoutes.map(item => ({
   path: item.path,
@@ -21,5 +19,9 @@ export default (store) => urlRoutes.map(item => ({
 
 
 
+const routes = [
+  {path: '/', exact: true, components: [], routes: [
 
+    ]}
+]
 

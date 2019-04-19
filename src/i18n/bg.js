@@ -18,6 +18,7 @@ export default {
   'app:pagination:btn:next': 'Следваща { page } от { total }',
   'app:pagination:btn:prev': 'Предишна { page } ',
 
-  'app:modal-box:button:close': 'Затвори'
+  'app:modal-box:button:close': 'Затвори',
+  'app:login:btn:title': 'Вход'
 
 }

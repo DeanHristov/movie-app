@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {
+  BrowserRouter as Router, Route, Switch,
+  Redirect
+} from 'react-router-dom'
 import {IntlProvider} from 'react-intl-redux'
 
 import rootRoutes from '@routes/index';
 import createStore from '@store/createStore'
-import HeaderContainer from "@shared/containers/Header/HeaderContainer";
+import PageHeaderContainer from "@shared/containers/PageHeader/PageHeaderContainer";
 import SettingPanelContainer from "@shared/containers/SettingPanel/SettingPanelContainer";
 import Preloader from "@shared/ui/Preloader/Preloader";
 import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
@@ -31,14 +34,17 @@ class Main extends Component {
         {togglePanel? <SettingPanelContainer/> : null}
         {req.isFetching && !req.isFetched ? <Preloader/> : null }
         <ModalBoxDispatcher />
-        <HeaderContainer/>
-        {routes.map((route, idx) =>
-          <Route
-            key={`route-${idx}`}
-            exact={route.exact}
-            path={route.path}
-            component={route.component}/>
-        )}
+        <Switch>
+          {routes.map((route, idx) =>
+            <Route
+              key={`route-${idx}`}
+              exact={route.exact}
+              path={route.path}
+              component={route.component}/>
+          )}
+
+          <Route render={() => <Redirect to={'/'} />} />
+        </Switch>
       </div>
     )
   }
@@ -46,7 +52,7 @@ class Main extends Component {
 
 render((
   <Provider store={store}>
-    <Router children={routes}>
+    <Router>
       <IntlProvider key={store.getState().intl.locale}>
         <Main/>
       </IntlProvider>
