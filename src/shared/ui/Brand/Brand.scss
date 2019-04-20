@@ -1,12 +1,17 @@
 .brand-container{
   width: 100%;
   min-height: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 
   background-color: #ccc;
-  text-align: center;
 
-
+  & > svg{
+    transform: translateY(-2rem);
+    -webkit-transform: translateY(-2rem);
+  }
   & > .brand-title{
     width: 100%;
     min-height: 3.5rem;
