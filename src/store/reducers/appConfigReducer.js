@@ -2,7 +2,15 @@ import {appConfigState} from "@constants/initialAppState";
 import {
   ON_TOGGLE_PANEL, ON_TOGGLE_MENU, ON_TOGGLE_SEARCH_FORM, ON_TOGGLE_MODAL_BOX,
 } from "@store/actions/appConfigActions";
-import {GET_TV_TRAILER_REQUEST, GET_TV_TRAILER_SUCCESS} from "@store/actions/movieActions";
+import {
+  GET_TV_TRAILER_REQUEST,
+  GET_TV_TRAILER_SUCCESS,
+  FETCH_MOVIES_FAILURE,
+  FETCH_TV_SHOWS_FAILURE,
+  GET_MOVIE_BY_ID_FAILURE,
+  GET_TV_TRAILER_FAILURE,
+  SEARCH_TV_ITEM_FAILURE
+} from "@store/actions/movieActions";
 
 export default (state = appConfigState, action) => {
   switch (action.type) {
@@ -56,6 +64,20 @@ export default (state = appConfigState, action) => {
         modalBox: {
           isShow: true,
           type: GET_TV_TRAILER_SUCCESS
+        }
+      }
+    }
+
+    case FETCH_MOVIES_FAILURE:
+    case SEARCH_TV_ITEM_FAILURE:
+    case GET_TV_TRAILER_FAILURE:
+    case FETCH_TV_SHOWS_FAILURE:
+    case GET_MOVIE_BY_ID_FAILURE: {
+      return {
+        ...state,
+        modalBox: {
+          isShow: true,
+          type: action.type
         }
       }
     }

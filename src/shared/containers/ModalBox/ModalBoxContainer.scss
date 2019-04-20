@@ -57,6 +57,12 @@
       font-size: 1.8rem;
       border: none;
     }
+
+    &.error{
+      h3{
+        color: #c0392b;
+      }
+    }
   }
 }
 

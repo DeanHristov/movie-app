@@ -13,12 +13,12 @@ import {toggleModalBox} from "@store/actions/appConfigActions";
 export default class ModalBoxContainer extends Component {
 
   render() {
-    const { title, children } = this.props;
+    const { title, children, type } = this.props;
     return (
       <div className={'modal-box-overlay'} ref={ node => this.$overlay = node}>
         <div
           ref={ node => this.$container = node}
-          className={'modal-box-container slide-up-in'} >
+          className={type ? `modal-box-container slide-up-in ${type}` : 'modal-box-container slide-up-in'} >
           <header className={'modal-box-header'} >
             <h3 className={'mb-title'}>{ title }</h3>
           </header>

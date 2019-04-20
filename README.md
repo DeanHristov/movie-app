@@ -11,7 +11,6 @@ The file has three keys, that are needed to app:
 Tasks      | Description
 -----------|---------------------------------------------------------------------------------------
 API_KEY=   | It is provided by [The Movie Database (TMDb)](https://www.themoviedb.org) 
-API_URL=   | It is provided by [The Movie Database (TMDb)](https://www.themoviedb.org)
 API_TOKEN= | It is provided by [The Movie Database (TMDb)](https://www.themoviedb.org)
 
 You can grab their value from [here](https://www.themoviedb.org/settings/api).
