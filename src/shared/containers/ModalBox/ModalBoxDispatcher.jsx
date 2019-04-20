@@ -25,7 +25,6 @@ export default class ModalBoxDispatcher extends Component {
           ? <MoviePlayer {...youtubePlayer} /> : null}
         {modalBox.isShow && modalBox.type.lastIndexOf('FAILURE') > -1
           ? <ErrorHandling  {...status}/> : null}
-
       </div>
     )
   }
