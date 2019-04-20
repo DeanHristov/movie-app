@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 import './ListItem.scss'
 import {FormattedMessage} from "react-intl";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faVideo} from "@fortawesome/free-solid-svg-icons";
+import {faTv} from "@fortawesome/free-solid-svg-icons";
 
 export default class ListItem extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class ListItem extends Component {
     return (
       <li className="nav-list-item flex-row">
         <span>
-          <FontAwesomeIcon icon={faVideo} color={'#999'} />
+          <FontAwesomeIcon icon={faTv} color={'#999'} />
         </span>
         <NavLink activeClassName={'active'} to={path}>
           <FormattedMessage id={`app:nav:title:${title}`} />

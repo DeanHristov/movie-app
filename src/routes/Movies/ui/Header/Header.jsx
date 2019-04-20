@@ -5,12 +5,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import './Header.scss'
 
-export default ({isVisibleSearchForm, onClick}) => (
+export default ({isVisible, onClick}) => (
   <header className={'movies-header flex-row'}>
     <FormattedMessage id={'app:movies:page:title'}/>
     <FontAwesomeIcon
       className={'search-icon'}
-      icon={isVisibleSearchForm ? faTimes : faSearch}
+      icon={isVisible ? faTimes : faSearch}
       size={'1x'}
       color={'#bbb'}
       onClick={onClick}/>
