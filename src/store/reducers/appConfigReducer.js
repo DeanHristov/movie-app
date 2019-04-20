@@ -63,6 +63,7 @@ export default (state = appConfigState, action) => {
           width,
           height
         },
+        // TODO Remove it!
         modalBox: {
           isShow: true,
           type: GET_TV_TRAILER_SUCCESS

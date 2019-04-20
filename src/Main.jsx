@@ -16,16 +16,10 @@ import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
 
 import './Main.scss'
 
-
 const history = createBrowserHistory();
 const store = createStore(window.__INITIAL_STATE__, history);
 const $ROOT_NODE = document.getElementById('app-root');
 const routes = rootRoutes(store);
-
-
-const Home = ({history}) => (
-  <button onClick={() => history.push('/movies')}>Go to movies </button>
-)
 
 @connect(props => ({
   togglePanel: props.appConfig.togglePanel,
@@ -48,7 +42,6 @@ class Main extends Component {
               component={route.component}/>
           )}
 
-          {/*<Route path={'/'} render={Home}/>*/}
           <Route render={() => <Redirect to={'/movies'}/>}/>
         </Switch>
       </div>
@@ -60,7 +53,7 @@ render((
   <Provider store={store}>
     <IntlProvider key={store.getState().intl.locale}>
       <ConnectedRouter history={history}>
-        <Main/>
+        <Route path={'/'} component={Main}/>
       </ConnectedRouter>
     </IntlProvider>
   </Provider>
