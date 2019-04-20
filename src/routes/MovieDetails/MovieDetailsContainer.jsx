@@ -4,8 +4,12 @@ import { withRouter } from 'react-router-dom'
 
 import PageHeaderContainer from "@shared/containers/PageHeader/PageHeaderContainer";
 import {fetchMovieById} from "@store/actions/movieActions";
+import PlayerContainer from "./containers/PlayerContainer";
+import TagList from "./ui/Tags/TagList";
+import './MovieDetailsContainer.scss'
 
 @connect(props => ({
+  movies: props.movies.movies,
   movieDetails: props.movies.movieDetails,
   lang: props.intl.locale
 }), dispatch => ({
@@ -25,12 +29,26 @@ class MovieDetailsContainer extends Component {
     });
   }
 
+  componentWillReceiveProps( { movieDetails } ) {
+    this.setState({ movie: movieDetails })
+  }
+
   render() {
-    console.log('this.props.movies(): ', this.state.movie)
+    const { lang, match: { params } } = this.props;
+    const { movie: { title, overview, genres, vote_count} } = this.state;
+    const movieDetails = {
+      lang,
+      votes: vote_count,
+      movieId: parseInt(params.movieId)
+    };
+
     return (
       <div className="mv-details-container">
+        <h3 className={'mv-details-title slide-up-in'}>{title}</h3>
+        <PlayerContainer {...movieDetails} />
+        <TagList tags={genres} />
+        <p className={'mv-details-overview slide-up-in-3x'}>{overview}</p>
         <PageHeaderContainer/>
-        <h3>works...</h3>
       </div>
 
     )

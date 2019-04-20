@@ -1,0 +1,18 @@
+@mixin calc-preloader-size ($size, $bg-color: transperant) {
+  width: $size;
+  height:$size;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -($size / 2);
+  margin-top: -($size / 2) ;
+  background-color: $bg-color;
+}
+
+@mixin slide-up-in($speed: .5s) {
+  -webkit-animation-name: slide-up-fade-in;
+  -webkit-animation-duration: $speed;
+
+  animation-name: slide-up-fade-in;
+  animation-duration: $speed;
+}

@@ -1,25 +1,18 @@
+@import "mixins";
+
 $cube-loader-size: 8rem;
 $cycle-loader-size: 12rem;
-
-@mixin calc-preloader-size ($size, $bg-color: transperant) {
-  width: $size;
-  height:$size;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -($size / 2);
-  margin-top: -($size / 2) ;
-  background-color: $bg-color;
-}
-
 .slide-up-in{
-  -webkit-animation-name: slide-up-fade-in;
-  -webkit-animation-duration: .7s;
-
-  animation-name: slide-up-fade-in;
-  animation-duration: .7s;
+  @include slide-up-in();
 }
 
+.slide-up-in-2x{
+  @include slide-up-in(1s);
+}
+
+.slide-up-in-3x{
+  @include slide-up-in(1.5s);
+}
 .cycle-loader{
   @include calc-preloader-size($cycle-loader-size);
 
