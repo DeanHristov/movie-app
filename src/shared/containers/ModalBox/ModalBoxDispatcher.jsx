@@ -19,14 +19,12 @@ export default class ModalBoxDispatcher extends Component {
       request: {  status }, pathname
     } = this.props;
 
-    console.log('ModalBoxDispatcher()')
     return (
       <div className={'modal-box-wrapper'}>
         {modalBox.isShow && modalBox.type === GET_TV_TRAILER_SUCCESS && pathname === '/movies'
           ? <MoviePlayer {...youtubePlayer} /> : null}
         {modalBox.isShow && modalBox.type.lastIndexOf('FAILURE') > -1
           ? <ErrorHandling  {...status}/> : null}
-
       </div>
     )
   }

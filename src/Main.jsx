@@ -16,6 +16,7 @@ import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
 
 import './Main.scss'
 
+
 const history = createBrowserHistory();
 const store = createStore(window.__INITIAL_STATE__, history);
 const $ROOT_NODE = document.getElementById('app-root');
@@ -41,7 +42,6 @@ class Main extends Component {
               path={route.path}
               component={route.component}/>
           )}
-
           <Route render={() => <Redirect to={'/movies'}/>}/>
         </Switch>
       </div>
