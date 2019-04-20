@@ -1,0 +1,29 @@
+.movies-container{
+  width: 100%;
+  min-width: 31rem;
+  height: auto;
+
+  margin-top: 5rem;
+  padding: 1rem;
+
+
+  .movie-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .movies-container{
+    margin-top: 0;
+    margin-left: 20rem;
+    width: calc(100% - 20rem);
+
+    .movie-body{
+      max-width: 118rem;
+      margin: 0 auto;
+    }
+  }
+}

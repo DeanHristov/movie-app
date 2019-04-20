@@ -1,0 +1,45 @@
+.mv-details-container{
+  width: 100%;
+  min-width: 31rem;
+  height: auto;
+  margin-top: 5rem;
+  padding: 1rem;
+
+  .mv-details-title{
+    width: 100%;
+    height: auto;
+    max-width: 98rem;
+    margin: 0 auto;
+
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    padding: 1rem 0;
+    color: #353535;
+    text-transform: uppercase;
+    border-bottom: 0.1rem solid #ccc;
+  }
+  .mv-details-overview{
+    max-width: 98rem;
+    margin: .3rem auto;
+    color: #1D1D1D;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    border-bottom: 0.1rem solid #ccc;
+    padding: 1rem 0;
+    word-break: break-all;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .mv-details-container{
+    margin-top: 0;
+    margin-left: 20rem;
+    width: calc(100% - 20rem);
+
+    .mv-details-overview{
+      font-size: 1.8rem;
+    }
+  }
+}

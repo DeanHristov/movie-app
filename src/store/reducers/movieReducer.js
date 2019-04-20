@@ -1,7 +1,54 @@
-import { movieState } from '@constants/initialAppState'
+import { moviesState } from '@constants/initialAppState'
+import {
+  FETCH_MOVIES_SUCCESS, FETCH_TV_SHOWS_SUCCESS,
+  GET_MOVIE_BY_ID_SUCCESS, ON_RESET_MOVIES,
+  SEARCH_TV_ITEM_SUCCESS,
 
-export default (state = movieState, action) => {
+} from "@store/actions/movieActions";
+import {ON_TOGGLE_SEARCH_FORM} from "@store/actions/appConfigActions";
 
+export default (state = moviesState, action) => {
+
+    switch (action.type) {
+      case SEARCH_TV_ITEM_SUCCESS: {
+        return {
+          ...state,
+          oldMovies: state.movies,
+          movies: action.payload
+        }
+      }
+      case ON_RESET_MOVIES:
+      case ON_TOGGLE_SEARCH_FORM: {
+        if (!action.payload && Object.values(state.oldMovies).length) {
+          return {
+            ...state,
+            movies: state.oldMovies
+          }
+        }
+
+        return state;
+      }
+      case FETCH_MOVIES_SUCCESS: {
+        return {
+          ...state,
+          movies: action.payload
+        }
+      }
+
+      case FETCH_TV_SHOWS_SUCCESS: {
+        return {
+          ...state,
+          tvShows: action.payload
+        }
+      }
+
+      case GET_MOVIE_BY_ID_SUCCESS: {
+        return {
+          ...state,
+          movieDetails: action.payload
+        }
+      }
+    }
 
     return state;
 }

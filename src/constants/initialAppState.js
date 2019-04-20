@@ -1,10 +1,10 @@
-export const movieState = {
-    movies: [
-    ],
-    movieModal: {
-        isOpen: false
-    }
-}
+import LocaleLoader from "./LocaleLoader";
+
+export const moviesState = {
+  oldMovies: {},
+  movies: {},
+  movieDetails: {}
+};
 
 export const userState = {
     isLogged: false,
@@ -23,36 +23,48 @@ export const userState = {
         sha256: null
       }
     }
-}
+};
+
+export const LOCAL_STORAGE = {
+  LOCALE: 'app:locale'
+};
 
 export const intlState = {
-    locale: 'en',
-    messages: {}
-}
+    languages: ['en', 'bg'],
+    locale: localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en',
+    messages: LocaleLoader(localStorage.getItem(LOCAL_STORAGE.LOCALE) || 'en')
+};
 
-export const requestState =  {
-  // In this time the UI have to trigger some kind of state like 'spinner' 
+export const requestState = {
+  // In this time the UI have to trigger some kind of state like 'spinner'
   isFetching: false,
+
+  isFetched: false,
 
   // There should be: 'error' or 'success'
   status: null,
 
-  // Populate it only if the status is 'error'
-  error: null,
 
   // Store timestamp
-  lastUpdated: null,
-
-  //
-  url: null,
-
-  data: []
+  lastUpdated: null
 };
 
+export const appConfigState = {
+  toggleSideBar: false,
+  toggleSearchField: false,
+  togglePanel: false,
+  modalBox: {
+    isShow: false,
+    type: null
+  },
+  youtubePlayer: {
+    urlKeys: [],
+    autoplay: 0
+  }
+};
 
-
-export const urlRoutes = {
-  HOME_URL: '/home',
-  LOGIN_URL: '/login',
-  SEARCH_URL: '/search'
-}
+export const urlRoutes = [
+  {path: '/movies', exact: true, title: 'movies', isUsage: true},
+  {path: '/movie/:movieId', title: 'details', isUsage: false},
+  {path: '/login', title: 'login', isUsage: false}
+];

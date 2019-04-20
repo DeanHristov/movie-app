@@ -1,15 +1,17 @@
 import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
 
-import userReducer from './userReducer';
-import movieReducer from './movieReducer';
-import locationReducer from './locationReducer'
-import intlReducer from './intlReducer';
-import requestReducer from './requestReducer';
+import appConfigReducer from "@store/reducers/appConfigReducer";
+import movieReducer from "@store/reducers/movieReducer";
+import userReducer from "@store/reducers/userReducer";
+import requestReducer from "@store/reducers/requestReducer";
+import intlReducer from "@store/reducers/intlReducer";
 
-export default combineReducers({
+export default (history) => combineReducers({
     movies: movieReducer,
     user: userReducer,
-    location: locationReducer,
+    router: connectRouter(history),
     intl: intlReducer,
-    request: requestReducer
+    request: requestReducer,
+    appConfig: appConfigReducer
 })

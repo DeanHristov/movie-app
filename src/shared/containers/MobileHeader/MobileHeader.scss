@@ -1,0 +1,36 @@
+.mobile-container {
+  width: 100%;
+  min-width: 32rem;
+  height: 5rem;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: #2a2b30;
+  border-bottom: .1rem solid #202125;
+
+  & > .title {
+    width: calc(100% - 5rem);
+    height: 100%;
+
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  & > .toggle-btn {
+    width: 3.5rem;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-container {
+    display: none !important;
+  }
+}

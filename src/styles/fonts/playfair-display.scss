@@ -1,0 +1,31 @@
+/**
+  The font is provided from: http://allfont.net
+  @see: http://allfont.net/download/playfair-display/
+ */
+
+@font-face {
+  font-family: playfair display;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(http://allfont.net/cache/fonts/playfair-display_8e41554d1e7b796ea2d98f5000ad22b8.woff) format('woff'), url(http://allfont.net/cache/fonts/playfair-display_8e41554d1e7b796ea2d98f5000ad22b8.ttf) format('truetype')
+}
+
+@font-face {
+  font-family: playfair display italic;
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://allfont.ru/cache/fonts/playfair-display-italic_eb09852dd48e716b2d454fab88d10902.woff) format('woff'), url(http://allfont.ru/cache/fonts/playfair-display-italic_eb09852dd48e716b2d454fab88d10902.ttf) format('truetype')
+}
+
+/*****************************
+ All rights reserved.
+ AllFont.net (c) 2011-2015
+ *****************************/
+@font-face {
+  font-family: 'Playfair Display Bold Italic';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-Bold Italic'),
+  url(http://allfont.net/cache/fonts/playfair-display-bold-italic_4845a78b03d2fd482a22624d9e837e32.woff) format('woff'),
+  url(http://allfont.net/cache/fonts/playfair-display-bold-italic_4845a78b03d2fd482a22624d9e837e32.ttf) format('truetype');
+}

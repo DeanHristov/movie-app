@@ -1,15 +1,19 @@
-import HomeContainer from './Home/containers/HomeContainer';
-import LoginContainer from './Login/containers/LoginContainer';
+import MoviesContainer from '@routes/Movies/MoviesContainer';
+import LoginContainer from '@routes/Login/LoginContainer';
+import MovieDetailsContainer from "@routes/MovieDetails/MovieDetailsContainer";
 
 import {urlRoutes} from '@constants/initialAppState'
 
-export default (store) => [{
-  path: urlRoutes.LOGIN_URL,
-  component: LoginContainer
-}, {
-  path: urlRoutes.HOME_URL,
-  component: HomeContainer
-}];
-
-
-
+// TODO remove it!
+const mapComponentToRoute = {
+  movies: MoviesContainer,
+  details: MovieDetailsContainer,
+  login: LoginContainer
+}
+// TODO Add restriction functionality
+export default () => urlRoutes.map(item => ({
+  path: item.path,
+  component: mapComponentToRoute[item.title],
+  exact: item.exact,
+  title: item.title
+}));

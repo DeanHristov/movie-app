@@ -1,3 +1,7 @@
+@import "./reset";
+@import "fonts/playfair-display";
+@import "animate-effects";
+
 *{
   box-sizing: border-box;
 }
@@ -6,5 +10,32 @@
   font-size: 10px;
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.text-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-bold-italic{
+  font-family: Playfair Display Bold Italic;
+  font-weight: bold;
+
+}
+
+.on-overlay {
+  background-color: rgba(0,0,0,0.4);
 }
