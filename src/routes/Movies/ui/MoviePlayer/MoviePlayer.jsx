@@ -10,15 +10,15 @@ import {connect} from "react-redux";
 export default class MoviePlayer extends Component {
 
   render() {
-    const { movies, config } = this.props;
+    const { movies = { results: []}, config } = this.props;
     const { youtubePlayer } = config;
     const lastRecord = youtubePlayer.urlKeys[youtubePlayer.urlKeys.length - 1];
-    const urlToTrailer = `https://www.youtube.com/embed/${lastRecord}?autoplay=${youtubePlayer.autoplay}&fs=0`
+    const urlToTrailer = `https://www.youtube.com/embed/${lastRecord}?autoplay=${youtubePlayer.autoplay}`
     const title = movies.results
         .find(item => item.id === youtubePlayer.movieId).title;
 
 
-   // https://www.youtube.com/embed/06KcGIkl4zc?autoplay=1
+    console.log(urlToTrailer);
     return (
         <ModalBoxContainer title={title}>
           <iframe

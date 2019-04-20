@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
+import {createBrowserHistory} from 'history'
+import {ConnectedRouter} from 'connected-react-router'
 import {
-  BrowserRouter as Router, Route, Switch,
-  Redirect
+  Route, Switch, Redirect
 } from 'react-router-dom'
 import {IntlProvider} from 'react-intl-redux'
 
 import rootRoutes from '@routes/index';
 import createStore from '@store/createStore'
-import PageHeaderContainer from "@shared/containers/PageHeader/PageHeaderContainer";
 import SettingPanelContainer from "@shared/containers/SettingPanel/SettingPanelContainer";
 import Preloader from "@shared/ui/Preloader/Preloader";
 import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
@@ -17,23 +17,28 @@ import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
 import './Main.scss'
 
 
-const store = createStore(window.__INITIAL_STATE__);
+const history = createBrowserHistory();
+const store = createStore(window.__INITIAL_STATE__, history);
 const $ROOT_NODE = document.getElementById('app-root');
 const routes = rootRoutes(store);
 
 
+const Home = ({history}) => (
+  <button onClick={() => history.push('/movies')}>Go to movies </button>
+)
+
 @connect(props => ({
-  togglePanel : props.appConfig.togglePanel,
+  togglePanel: props.appConfig.togglePanel,
   req: props.request
 }))
 class Main extends Component {
   render() {
-    const { togglePanel, req } = this.props;
+    const {togglePanel, req} = this.props;
     return (
       <div className="app-container">
-        {togglePanel? <SettingPanelContainer/> : null}
-        {req.isFetching && !req.isFetched ? <Preloader/> : null }
-        <ModalBoxDispatcher />
+        {togglePanel ? <SettingPanelContainer/> : null}
+        {req.isFetching && !req.isFetched ? <Preloader/> : null}
+        <ModalBoxDispatcher/>
         <Switch>
           {routes.map((route, idx) =>
             <Route
@@ -43,7 +48,8 @@ class Main extends Component {
               component={route.component}/>
           )}
 
-          <Route render={() => <Redirect to={'/movies'} />} />
+          {/*<Route path={'/'} render={Home}/>*/}
+          <Route render={() => <Redirect to={'/movies'}/>}/>
         </Switch>
       </div>
     )
@@ -52,10 +58,10 @@ class Main extends Component {
 
 render((
   <Provider store={store}>
-    <Router>
-      <IntlProvider key={store.getState().intl.locale}>
+    <IntlProvider key={store.getState().intl.locale}>
+      <ConnectedRouter history={history}>
         <Main/>
-      </IntlProvider>
-    </Router>
+      </ConnectedRouter>
+    </IntlProvider>
   </Provider>
 ), $ROOT_NODE);

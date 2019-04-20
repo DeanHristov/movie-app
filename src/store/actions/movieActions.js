@@ -90,11 +90,11 @@ export const searchTVByQuery = ({lang = 'en', query = null, context = null}) => 
 };
 
 export const getTVTrailer = (props) => dispatch => {
-  if (!props.movieId || !props.context) return;
+  if (!props.movieId ) return;
 
   dispatch({type: GET_TV_TRAILER_REQUEST});
 
-  fetch(`${API_URL}/${props.context}/${props.movieId}/videos?api_key=${API_KEY}&language=${props.lang}`)
+  fetch(`${API_URL}/movie/${props.movieId}/videos?api_key=${API_KEY}&language=${props.lang}`)
     .then(res => res.json())
     .then(catchRequestError)
     .then(data => dispatch({

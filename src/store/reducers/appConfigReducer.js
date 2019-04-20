@@ -1,6 +1,8 @@
 import {appConfigState} from "@constants/initialAppState";
 import {
-  ON_TOGGLE_PANEL, ON_TOGGLE_MENU, ON_TOGGLE_SEARCH_FORM, ON_TOGGLE_MODAL_BOX,
+  ON_TOGGLE_PANEL, ON_TOGGLE_MENU,
+  ON_TOGGLE_SEARCH_FORM, ON_TOGGLE_MODAL_BOX,
+  ON_RESET_PLAYER_BOX,
 } from "@store/actions/appConfigActions";
 import {
   GET_TV_TRAILER_REQUEST,
@@ -68,6 +70,19 @@ export default (state = appConfigState, action) => {
       }
     }
 
+    case ON_RESET_PLAYER_BOX: {
+      return {
+        ...state,
+        modalBox: {
+          isShow: false,
+          type: null
+        },
+        youtubePlayer: {
+          urlKeys: [],
+          autoplay: 0
+        }
+      }
+    }
     case FETCH_MOVIES_FAILURE:
     case SEARCH_TV_ITEM_FAILURE:
     case GET_TV_TRAILER_FAILURE:

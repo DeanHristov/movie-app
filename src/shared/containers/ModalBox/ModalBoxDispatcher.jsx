@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import MoviePlayer from "@routes/Movies/ui/MoviePlayer/MoviePlayer";
 import {GET_TV_TRAILER_SUCCESS} from "@store/actions/movieActions";
 import ErrorHandling from "../../ui/ErrorHandling/ErrorHandling";
 
 @connect(props => ({
   config: props.appConfig,
-  request: props.request
+  request: props.request,
+  pathname: props.router.location.pathname
 }))
 export default class ModalBoxDispatcher extends Component {
 
@@ -16,14 +16,14 @@ export default class ModalBoxDispatcher extends Component {
   render () {
     const {
       config: { modalBox, youtubePlayer },
-      request: {  status }
+      request: {  status }, pathname
     } = this.props;
 
     return (
       <div className={'modal-box-wrapper'}>
-        {modalBox.isShow && modalBox.type === GET_TV_TRAILER_SUCCESS
+        {modalBox.isShow && modalBox.type === GET_TV_TRAILER_SUCCESS && pathname === '/movies'
           ? <MoviePlayer {...youtubePlayer} /> : null}
-        {modalBox.isShow && modalBox.type.lastIndexOf('FAILURE')
+        {modalBox.isShow && modalBox.type.lastIndexOf('FAILURE') > -1
           ? <ErrorHandling  {...status}/> : null}
 
       </div>
