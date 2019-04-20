@@ -8,7 +8,9 @@ export default ({ path }) => {
         className={'youtube-player'}
         type={'text/html'}
         src={path}
-        frameBorder={'0'} />
+        frameBorder={'0'}
+        allowFullScreen
+      />
     </div>
   )
 }
