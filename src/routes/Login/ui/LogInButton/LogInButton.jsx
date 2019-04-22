@@ -1,17 +1,12 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
+import {FormattedMessage} from "react-intl";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './LogInButton.scss';
-import {Link} from "react-router-dom";
-import {FormattedMessage} from "react-intl";
-export default class LogInButton extends Component {
-  render() {
-    return (
-      <Link className={'sign-in-button slide-up-in'} to={'/'}>
-        <FontAwesomeIcon icon={faSignInAlt}/>
-        <FormattedMessage id={'app:login:btn:title'} />
-      </Link>
-    )
-  }
-}
+export default ({ onClick }) => (
+  <a href={'javascript:void(0)'} className={'sign-in-button slide-up-in'} onClick={onClick}>
+    <FontAwesomeIcon icon={faSignInAlt}/>
+    <FormattedMessage id={'app:login:btn:title'} />
+  </a>
+)

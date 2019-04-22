@@ -6,27 +6,16 @@ export const moviesState = {
   movieDetails: {}
 };
 
-export const userState = {
+export const credentials = {
     isLogged: false,
-
-    // TODO Replace it with real API endpoint!
-    data: {
-      fistName: 'khaled',
-      lastName: 'børresen',
-      gender: 'male',
-      email: 'khaled.børresen@example.com',
-      login: {
-        uuid: null,
-        username: 'demo',
-        password: 'demo',
-        salt: null,
-        sha256: null
-      }
-    }
+    username: 'demo',
+    password: 'demo',
+    email: 'khaled.børresen@example.com',
 };
 
 export const LOCAL_STORAGE = {
-  LOCALE: 'app:locale'
+  LOCALE: 'app:locale',
+  CREDENTIALS_KEY: 'app:credentials'
 };
 
 export const intlState = {
@@ -64,7 +53,7 @@ export const appConfigState = {
 };
 
 export const urlRoutes = [
-  {path: '/movies', exact: true, title: 'movies', isUsage: true},
-  {path: '/movie/:movieId', title: 'details', isUsage: false},
-  {path: '/login', title: 'login', isUsage: false}
+  {isProtected: true, path: '/movies', exact: true, title: 'movies', isUsage: true},
+  {isProtected: true, path: '/movie/:movieId', title: 'details', isUsage: false},
+  {isProtected: false, path: '/login', title: 'login', isUsage: false}
 ];
