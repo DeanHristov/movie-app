@@ -12,8 +12,6 @@ const mapComponentToRoute = {
 }
 // TODO Add restriction functionality
 export default () => urlRoutes.map(item => ({
-  path: item.path,
   component: mapComponentToRoute[item.title],
-  exact: item.exact,
-  title: item.title
+  ...item
 }));

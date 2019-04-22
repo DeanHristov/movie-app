@@ -13,7 +13,7 @@ import createStore from '@store/createStore'
 import SettingPanelContainer from "@shared/containers/SettingPanel/SettingPanelContainer";
 import Preloader from "@shared/ui/Preloader/Preloader";
 import ModalBoxDispatcher from "@shared/containers/ModalBox/ModalBoxDispatcher";
-
+import ProtectedRoute from '@core/ProtectedRoute'
 import './Main.scss'
 
 
@@ -27,6 +27,26 @@ const routes = rootRoutes(store);
   req: props.request
 }))
 class Main extends Component {
+
+  renderRoutes (route) {
+    if (route.isProtected) {
+     return (
+       <ProtectedRoute
+         key={`route-${route.path}`}
+         exact={route.exact}
+         path={route.path}
+         component={route.component}/>
+     );
+    }
+
+    return (
+      <Route
+        key={`route-${route.path}`}
+        exact={route.exact}
+        path={route.path}
+        component={route.component} />
+    )
+  }
   render() {
     const {togglePanel, req} = this.props;
     return (
@@ -35,13 +55,7 @@ class Main extends Component {
         {req.isFetching && !req.isFetched ? <Preloader/> : null}
         <ModalBoxDispatcher/>
         <Switch>
-          {routes.map((route, idx) =>
-            <Route
-              key={`route-${idx}`}
-              exact={route.exact}
-              path={route.path}
-              component={route.component}/>
-          )}
+          {routes.map((route) => this.renderRoutes(route))}
           <Route render={() => <Redirect to={'/movies'}/>}/>
         </Switch>
       </div>

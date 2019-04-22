@@ -57,7 +57,8 @@ module.exports = env => ({
             "@locales": pathResolve(process.cwd(), 'src/i18n'),
             "@constants": pathResolve(process.cwd(), 'src/constants'),
             "@routes": pathResolve(process.cwd(), 'src/routes'),
-            "@shared": pathResolve(process.cwd(), 'src/shared')
+            "@shared": pathResolve(process.cwd(), 'src/shared'),
+            "@core": pathResolve(process.cwd(), 'src/core')
         }
     },
 
