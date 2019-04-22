@@ -1,12 +1,12 @@
 # Movie app
 
 The main purpose of this project just shows you my professions skills and кnowledge in this stack of technologies.
-The project including modern tools like Babeljs.io](https://babeljs.io/) and [webpack](https://webpack.js.org/) also some of the most usages JS technologies such as React/Redux/ES6+ and SCSS. 
+The project including modern tools like [Babeljs.io](https://babeljs.io/) and [webpack](https://webpack.js.org/) also some of the most usages JS technologies such as React/Redux/ES6+ and SCSS. 
 So, the app uses external API for listing/searching and etc. items provided by [The Movie Database (TMDb)](https://www.themoviedb.org).
 
 # Getting started
-Before you run the project you must create a new **.env** file in the same place where is stored **package.json** file.
-The file has three keys, that are needed to app: 
+Before you run the project you must update the **.env** file where is stored (the same place where is stored **package.json**).
+The file has a couple of keys, that needed to be added: 
 
 Tasks      | Description
 -----------|---------------------------------------------------------------------------------------
@@ -31,6 +31,7 @@ You can grab their value from [here](https://www.themoviedb.org/settings/api).
 dist/                  The production-ready code will be served here
 build/                 The project configuration will be serve here
 src/                   Project source code live here
+|- core/               core modules (singleton services and single-use components)
 |- constants/          Here is stored the initial state of APP
 |- i18n/               All locales are stored here
 |- routes/             The page routes live here
