@@ -5,7 +5,7 @@ import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './LogInButton.scss';
 export default ({ onClick }) => (
-  <a href={'javascript:void(0)'} className={'sign-in-button slide-up-in'} onClick={onClick}>
+  <a href={'javascript:void(0)'} className={'sign-in-button'} onClick={onClick}>
     <FontAwesomeIcon icon={faSignInAlt}/>
     <FormattedMessage id={'app:login:btn:title'} />
   </a>

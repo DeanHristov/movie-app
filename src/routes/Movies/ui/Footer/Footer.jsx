@@ -3,7 +3,7 @@ import Pagination from "@shared/ui/Pagination/Pagination";
 
 
 export default (props) => (
-  <footer className={props.isVisible ? 'movie-footer slide-up-in' : 'movie-footer on-hide'}>
+  <footer className={props.isVisible ? 'movie-footer' : 'movie-footer on-hide'}>
     {props.isVisible ? (
       <Pagination {...props} />
     ) : null}

@@ -1,23 +1,25 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 
-import './ListItem.scss'
 import {FormattedMessage} from "react-intl";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTv} from "@fortawesome/free-solid-svg-icons";
+import './ListItem.scss'
 
-export default class ListItem extends Component {
-  render() {
-    const {title, path} = this.props;
-    return (
-      <li className="nav-list-item flex-row">
-        <span>
-          <FontAwesomeIcon icon={faTv} color={'#999'} />
+export default ({title, path}) => {
+  const [iconMap] = useState({
+    ['movies']: faTv
+  });
+
+  console.log(title);
+  return (
+    <li className="nav-list-item">
+      <NavLink exact to={path}>
+        <span className={`icon icon-${title.replace(' ', '-')}`}>
+          <FontAwesomeIcon icon={iconMap[title.replace(' ', '-')]} color={'#999'}/>
         </span>
-        <NavLink activeClassName={'active'} to={path}>
-          <FormattedMessage id={`app:nav:title:${title}`} />
-        </NavLink>
-      </li>
-    )
-  }
+        <FormattedMessage id={`app:nav:title:${title.replace(' ', '-')}`}/>
+      </NavLink>
+    </li>
+  )
 }

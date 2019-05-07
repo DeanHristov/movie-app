@@ -1,3 +1,6 @@
+@import "~@styles/mixins/miscellaneous";
+@import "~@styles/utilities/colors";
+
 .setting-panel-overlay{
   width: 100%;
   height: 100%;
@@ -8,9 +11,9 @@
   overflow-x: auto;
   overflow: hidden;
 
-  background-color: rgba(0,0,0, 0.9);
+  background-color: $modal-box-overlay-bg-color;
   text-align: center;
-  transition: .5s;
+  @include transition-duration(.5ms);
 
   &.on-show{
    height: 100%;
@@ -22,7 +25,7 @@
     top: 2rem;
     right: 4.5rem;
     font-size: 6rem;
-    color: #fff;
+    color: $pagination-btn-color;
     cursor: pointer;
   }
 }

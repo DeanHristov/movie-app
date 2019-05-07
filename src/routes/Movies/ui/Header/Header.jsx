@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import {FormattedMessage} from "react-intl";
 import {faSearch, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './Header.scss'
 
 export default ({isVisible, onClick}) => (
-  <header className={'movies-header flex-row'}>
+  <header className={'movies-header'}>
     <FormattedMessage id={'app:movies:page:title'}/>
     <FontAwesomeIcon
       className={'search-icon'}

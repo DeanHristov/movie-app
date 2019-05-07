@@ -18,7 +18,7 @@ export default class ModalBoxContainer extends Component {
       <div className={'modal-box-overlay'} ref={ node => this.$overlay = node}>
         <div
           ref={ node => this.$container = node}
-          className={type ? `modal-box-container slide-up-in ${type}` : 'modal-box-container slide-up-in'} >
+          className={type ? `modal-box-container` : 'modal-box-container'} >
           <header className={'modal-box-header'} >
             <h3 className={'mb-title'}>{ title }</h3>
           </header>

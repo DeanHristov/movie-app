@@ -1,23 +1,27 @@
+@import "~@styles/utilities/colors";
+@import "~@styles/utilities/responsive";
+@import "~@styles/mixins/miscellaneous";
+
 .side-bar-container {
   width: 0;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  transition: .4s;
+  right: auto;
   overflow: hidden;
 
-  background-color: #2a2b30;
-  border-right: .1rem solid #202125;
+  background-color: $header-bg-color;
+  border-right: $header-border-color;
   z-index: 1;
 
+  @include transition-duration(300ms);
   &.on-show{
-    width: 18.6rem;
+    width: 20rem;
   }
 }
 
-
-@media screen and (min-width: 768px) {
+@media #{$breakpoint-xs} {
   .side-bar-container{
     width: 20rem;
   }

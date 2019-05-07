@@ -20,6 +20,10 @@ export const GET_MOVIE_BY_ID_REQUEST = 'GET_MOVIE_BY_ID_REQUEST';
 export const GET_MOVIE_BY_ID_FAILURE = 'GET_MOVIE_BY_ID_FAILURE';
 export const GET_MOVIE_BY_ID_SUCCESS = 'GET_MOVIE_BY_ID_SUCCESS';
 
+export const FETCH_CAST_OF_MOVIE_BY_ID_REQUEST = 'FETCH_CAST_OF_MOVIE_BY_ID_REQUEST';
+export const FETCH_CAST_OF_MOVIE_BY_ID_FAILURE = 'FETCH_CAST_OF_MOVIE_BY_ID_FAILURE';
+export const FETCH_CAST_OF_MOVIE_BY_ID_SUCCESS = 'FETCH_CAST_OF_MOVIE_BY_ID_SUCCESS';
+
 export const ON_RESET_MOVIES = 'ON_RESET_MOVIES';
 
 export const fetchTopRatedMovies = ({lang = 'en', page = 1}) => dispatch => {
@@ -104,6 +108,22 @@ export const getTVTrailer = (props) => dispatch => {
     type: GET_TV_TRAILER_FAILURE,
     payload: reason
   }))
-}
+};
+
+export const getFullCastOfMovieById = ({ movieId, lang }) => dispatch => {
+  dispatch({type: FETCH_CAST_OF_MOVIE_BY_ID_REQUEST});
+
+  fetch(`${API_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=${lang}`)
+    .then(res => res.json())
+    .then(catchRequestError)
+    .then(data => dispatch({
+      type: FETCH_CAST_OF_MOVIE_BY_ID_SUCCESS,
+      payload: data.cast
+    }))
+    .catch(reason => dispatch({
+      type: FETCH_CAST_OF_MOVIE_BY_ID_FAILURE,
+      payload: reason
+    }))
+};
 
 

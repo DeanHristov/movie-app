@@ -1,26 +1,37 @@
+@import "~@styles/utilities/colors";
+@import "~@styles/mixins/flex";
+@import "~@styles/mixins/miscellaneous";
+
 .mv-details-player-container{
   max-width: 98rem;
   margin: 1rem auto;
+  @include slide-up-in(1.2s);
 
   .movie-rating{
     width: 100%;
     height: 6rem;
-    justify-content: center;
-    align-items: center;
+
+    @include display-flex();
+    @include justify-content-center();
+    @include align-items-center();
+
     margin-top: .5rem;
-    background-color: #f6a021;
+    background-color: $card-item-rating-btn-bg-color;
 
     .stars {
       width: calc(100% - 10rem);
       padding: 1.8rem;
+      & > svg {
+        color: $card-item-heading-color;
+      }
     }
     .votes{
       width: 10rem;
       height: 5rem;
       display: block;
       padding: 1.5rem;
-      border-left: .1rem solid #fff;
-      color: #fff;
+      border-left: .1rem solid $card-item-heading-color;
+      color: $card-item-heading-color;
       text-align: center;
     }
   }

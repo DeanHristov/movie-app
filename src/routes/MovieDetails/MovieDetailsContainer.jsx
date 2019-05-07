@@ -6,6 +6,7 @@ import PageHeaderContainer from "@shared/containers/PageHeader/PageHeaderContain
 import {fetchMovieById} from "@store/actions/movieActions";
 import PlayerContainer from "./containers/PlayerContainer";
 import TagList from "./ui/Tags/TagList";
+import Header from "./ui/Header/Header";
 import './MovieDetailsContainer.scss'
 
 @connect(props => ({
@@ -35,7 +36,7 @@ class MovieDetailsContainer extends Component {
 
   render() {
     const { lang, match: { params } } = this.props;
-    const { movie: { title, overview, genres, vote_count} } = this.state;
+    const { movie: { title, overview, genres, vote_count, homepage} } = this.state;
     const movieDetails = {
       lang,
       votes: vote_count,
@@ -44,10 +45,10 @@ class MovieDetailsContainer extends Component {
 
     return (
       <div className="mv-details-container">
-        <h3 className={'mv-details-title slide-up-in'}>{title}</h3>
+        <Header {...{title, homepage}} />
         <PlayerContainer {...movieDetails} />
         <TagList tags={genres} />
-        <p className={'mv-details-overview slide-up-in-3x'}>{overview}</p>
+        <p className={'mv-details-overview'}>{overview}</p>
         <PageHeaderContainer/>
       </div>
 

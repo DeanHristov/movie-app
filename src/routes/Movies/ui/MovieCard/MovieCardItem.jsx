@@ -32,7 +32,7 @@ export default class MovieCardItem extends Component {
     } = this.props;
 
     return (
-      <article className={'movie-card-item slide-up-in'}>
+      <article className={'movie-card-item'}>
         <div className={'movie-card-body'}>
           <a href={'javascript:void(0)'}>
             <img className={'movie-image'} src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={original_title}/>

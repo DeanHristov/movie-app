@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import './MoviePlayer.scss'
 import ModalBoxContainer from "@shared/containers/ModalBox/ModalBoxContainer";
 import {connect} from "react-redux";
+import './MoviePlayer.scss'
 
 @connect(props => ({
   config: props.appConfig,

@@ -1,24 +1,17 @@
-a.sign-in-button {
-  width: 20rem;
-  cursor: pointer;
-  padding: 1.8rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@import "~@styles/mixins/miscellaneous";
+@import "~@styles/utilities/colors";
 
-  text-align: center;
-  background-color: #F6A021;
+a.sign-in-button {
+  padding: 1.8rem;
+  text-transform: uppercase;
   border: .1rem solid #fff;
   border-radius: .5rem;
-
   box-shadow: 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.2),
   0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.14),
   0 0.1rem 1rem 0 rgba(0, 0, 0, 0.12);
 
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.6rem;
-  text-transform: uppercase;
+  @include main-button(20rem, $login-btn-bg-color, $login-btn-color);
+  @include slide-up-in(1s);
 
   & > svg {
     margin-right: .8rem

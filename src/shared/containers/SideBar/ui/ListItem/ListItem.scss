@@ -1,32 +1,27 @@
+@import "~@styles/mixins/miscellaneous";
+@import "~@styles/utilities/colors";
+
 .nav-list-item{
   font-size: 1.4rem;
   letter-spacing: .1rem;
   text-transform: uppercase;
-  border-bottom: .1rem solid #202125;
+  border-bottom: $header-border-color;
   text-align: left;
 
-  justify-content: left;
-  align-items: baseline;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
 
-  & > span{
-    display: block;
-    width: 3.2rem;
-    text-align: center;
-    height: auto;
-  }
   & > a{
     width: 100%;
     display: block;
     line-height: 4.5rem;
     position: relative;
-    color: #999;
+    color: $header-color;
     text-decoration: none;
-    padding-left: .5rem;
 
-    & > a.active,
-    & > a:hover{
-      color: #fff;
+    & > span:last-child{
+      margin-left: 1rem;
     }
+
+    @include transition-duration(300ms)
   }
 }

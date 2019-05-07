@@ -44,7 +44,7 @@ export default class Pagination extends Component {
 
   render() {
     return (
-      <div className={'pagination-container flex-row'}>
+      <div className={'pagination-container'}>
         {this.buttonPrev()}
         {this.buttonNext()}
       </div>

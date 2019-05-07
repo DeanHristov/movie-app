@@ -1,12 +1,20 @@
+@import "~@styles/utilities/colors";
+@import "~@styles/mixins/flex";
+@import "~@styles/mixins/miscellaneous";
+
 .search-field-item{
   width: 100%;
   height: 4rem;
   opacity: 1;
-  align-items: center;
-
   margin-top: .5rem;
-  border: .1rem solid #e6e6e6;
-  transition: .35s ease-out 0s;
+
+  @include display-flex();
+  @include justify-content-center();
+  @include align-items-center();
+  @include slide-up-in(.9s);
+  @include transition(.35s ease-out 0s);
+
+  border: $primary-border-style;
 
   &.on-show{
     top: 2rem;
@@ -18,10 +26,10 @@
     padding: 0 .7rem;
     outline: none;
 
-    border: none;
-    border-right: .1rem solid #e6e6e6;
-    background-color: #fff;
-    color: #666;
+    border: 0;
+    border-right: $primary-border-style;
+    background-color: transparent;
+    color: $primary-color;
     font-size: 1.4rem;
 
   }

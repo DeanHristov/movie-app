@@ -1,25 +1,37 @@
+@import "~@styles/mixins/flex";
+@import "~@styles/utilities/colors";
+@import "~@styles/utilities/responsive";
+
 .mobile-container {
   width: 100%;
   min-width: 32rem;
   height: 5rem;
-  display: block;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 
-  background-color: #2a2b30;
-  border-bottom: .1rem solid #202125;
+  background-color: $header-bg-color;
+  border-bottom: $header-border-color;
+
+  @include display-flex();
+  @include justify-content-center();
+  @include align-items-center();
 
   & > .title {
     width: calc(100% - 5rem);
     height: 100%;
 
+    @include display-flex();
+    @include justify-content-center();
+    @include align-items-center();
+
     text-transform: uppercase;
     white-space: nowrap;
     font-size: 2.6rem;
     font-weight: bold;
-    color: #fff;
+    color: $header-hover-color;
   }
 
   & > .toggle-btn {
@@ -29,7 +41,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media #{$breakpoint-xs} {
   .mobile-container {
     display: none !important;
   }

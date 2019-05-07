@@ -24,9 +24,9 @@ export default class MobileHeader extends Component {
   render() {
     const {title} = this.state;
     return (
-      <div className={'mobile-container flex-row'}>
-        <h2 className={'title text-center text-bold-italic'}>{title}</h2>
-        <a className={'toggle-btn text-center'} onClick={::this.onClick}>
+      <div className={'mobile-container'}>
+        <h2 className={'title'}>{title}</h2>
+        <a className={'toggle-btn'} onClick={::this.onClick}>
           <FontAwesomeIcon icon={faBars} size="2x" color={'#fff'}/>
         </a>
       </div>

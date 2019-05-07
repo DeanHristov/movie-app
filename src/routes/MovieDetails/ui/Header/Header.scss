@@ -1,27 +1,21 @@
-@import "~@styles/mixins/flex";
 @import "~@styles/mixins/miscellaneous";
 @import "~@styles/utilities/colors";
 @import "~@styles/utilities/responsive";
 
-.movies-header{
-
-  @include display-flex();
-  @include align-items-center();
+.mv-details-title{
   @include page-header($heading-color, $heading-border-style);
-  @include slide-up-in(.7s);
-
-  & > svg{
-    display: none;
-    cursor: pointer;
+  @include slide-up-in();
+  & > a{
+    color: inherit;
   }
+
 }
 
 
 @media #{$breakpoint-xs} {
-    .movies-header{
-      margin: 6.3rem auto 0 auto !important;
-      padding: 1rem .5rem;
-      max-width: 118rem;
+    .mv-details-title{
+      margin: 6.3rem auto 0 auto;
+      max-width: 98rem;
       & > span{
         width: calc(100% - 3rem);
         padding-right: 1rem;

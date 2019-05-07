@@ -70,7 +70,7 @@ export default class SearchField extends Component {
     const { isTyped } = this.state;
 
     return (
-      <div className={isVisible ? 'search-field-item flex-row on-show' : 'search-field-item flex-row' }>
+      <div className={isVisible ? 'search-field-item on-show' : 'search-field-item' }>
         <FormattedMessage id={'app:search:placeholder:title'}>
           {messageText =>  (
             <input

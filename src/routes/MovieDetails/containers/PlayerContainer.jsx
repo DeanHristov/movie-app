@@ -38,13 +38,13 @@ export default class PlayerContainer extends Component{
     const lastRecord = youtubePlayer.urlKeys[youtubePlayer.urlKeys.length - 1];
 
     return (
-      <div className={'mv-details-player-container slide-up-in-2x'} >
+      <div className={'mv-details-player-container'} >
         <div className={'player-container'}>
           {lastRecord ? (
             <Player path={`https://www.youtube.com/embed/${lastRecord}?autoplay=${youtubePlayer.autoplay}&fs=1&amp;`}/>
           ): null}
         </div>
-        <div className={'movie-rating flex-row'}>
+        <div className={'movie-rating'}>
           <div className={'stars'}>
             <FontAwesomeIcon icon={faStar} color={'#fff'} />
             <FontAwesomeIcon icon={faStar} color={'#fff'} />

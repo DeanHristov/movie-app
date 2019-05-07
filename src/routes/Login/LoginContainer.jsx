@@ -18,7 +18,7 @@ class LoginContainer extends Component {
     const { history } = this.props;
 
     auth.login((params) => {
-      this.props.login(params)
+      this.props.login(params);
       history.push('/movies')
     })
   }

@@ -1,9 +1,14 @@
+@import "~@styles/mixins/flex";
+@import "~@styles/utilities/colors";
+
 #login-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   position: absolute;
+
+  background-color: $primary-bg-color;
+
+  @include display-flex();
+  @include align-items-center();
+  @include justify-content-center();
 }

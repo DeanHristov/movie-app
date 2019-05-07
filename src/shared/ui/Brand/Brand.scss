@@ -1,12 +1,17 @@
+@import '~@styles/utilities/colors';
+@import '~@styles/mixins/flex';
+@import '~@styles/mixins/miscellaneous';
+
 .brand-container{
   width: 100%;
   min-height: 16rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 
-  background-color: #ccc;
+  @include display-flex();
+  @include align-items-center();
+  @include justify-content-center();
+
+  background-color: $primary-bg-color;
 
   & > svg{
     transform: translateY(-2rem);
@@ -15,17 +20,14 @@
   & > .brand-title{
     width: 100%;
     min-height: 3.5rem;
+    padding: 1rem 0;
     position: absolute;
     bottom: 0;
 
-    text-transform: uppercase;
-    white-space: nowrap;
-    font-size: 2.2rem;
-    color: #fff;
-    text-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.5);
-    background-color: #00A3E1;
-    opacity: .8;
+    background-color: $brand-bg-color;
 
+    @include brand-title(2rem, $brand-color);
+    text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.5);
   }
 }
 

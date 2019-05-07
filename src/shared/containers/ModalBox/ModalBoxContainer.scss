@@ -1,29 +1,38 @@
+@import "~@styles/utilities/colors";
+@import "~@styles/utilities/responsive";
+@import "~@styles/mixins/flex";
+@import "~@styles/mixins/miscellaneous";
+
 .modal-box-overlay{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0, 0.7);
+
+  background-color: $modal-box-overlay-bg-color;
   z-index: 6;
+
+  @include display-flex();
+  @include justify-content-center();
+  @include align-items-center();
 
   .modal-box-container{
     width: 90%;
     min-width: 32rem;
     height: auto;
     z-index: 12;
-    display: flex;
-    flex-direction: column;
-    border: .1rem solid #ccc;
+    border: $primary-border-style;
+    background-color: $modal-box-bg-color;
 
+    @include display-flex();
+    @include flex-direction-column();
+    @include slide-up-in(.7s);
 
     .md-title{
-      color: #353535;
+      color: $heading-color;
       text-transform: capitalize;
       font-size: 1.8rem;
       text-align: center;
@@ -35,7 +44,7 @@
       width: 100%;
       min-height: 3rem;
       padding: .5rem;
-      border-bottom: .1rem solid #ccc;
+      border-bottom: $primary-border-style;
       background-color: #fff;
     }
 
@@ -44,17 +53,7 @@
     }
 
     .mb-button-close{
-      width: 100%;
-      height: 4rem;
-      cursor: pointer;
-      outline: none;
-
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      background-color: #4CAF50;
-      color: #fff;
-      font-size: 1.8rem;
+      @include main-button(100%, $modal-box-btn-bg-color, $modal-box-btn-color, 4rem, 1.8rem);
       border: none;
     }
 
@@ -66,7 +65,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media #{$breakpoint-xs} {
   .modal-box-overlay{
     .modal-box-container{
       width: 64rem;

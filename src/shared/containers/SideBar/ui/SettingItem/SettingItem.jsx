@@ -5,7 +5,7 @@ import {FormattedMessage} from "react-intl";
 import {connect} from "react-redux";
 
 import { togglePanel } from '@store/actions/appConfigActions';
-import './SettingItem.scss'
+import '../ListItem/ListItem.scss'
 
 @connect(null, dispatch => ({
   doShowPanel : state => dispatch(togglePanel(state))
@@ -17,11 +17,12 @@ export default class SettingItem extends Component {
   }
   render() {
     return (
-      <li className={'nav-list-item flex-row setting'}>
+      <li className={'nav-list-item'}>
+        <a href={'javascript:void(0)'} onClick={::this.onClick} >
         <span>
           <FontAwesomeIcon icon={faCogs} color={'#999'} />
         </span>
-        <a href={'javascript:void(0)'} onClick={::this.onClick} >
+
           <FormattedMessage id={'app:nav:title:settings'} />
         </a>
       </li>
