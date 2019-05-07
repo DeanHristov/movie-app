@@ -8,6 +8,7 @@ export const moviesState = {
 
 export const credentials = {
     isLogged: false,
+    isRemember: false,
     username: 'demo',
     password: 'demo',
     email: 'khaled.børresen@example.com',

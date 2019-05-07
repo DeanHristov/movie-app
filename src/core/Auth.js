@@ -34,15 +34,15 @@ class Auth {
   }
 
   isAuthenticate () {
-    return !!this.#userCredentials;
+    return !!this.credentials;
   }
 
   get credentials() {
     return this.#userCredentials;
   }
 
-  setCredentials (credentials = null, remeber = false) {
-    const storage = remeber ? localStorage : sessionStorage;
+  setCredentials (credentials = null, remember = credentials.isRemember) {
+    const storage = remember ? localStorage : sessionStorage;
 
     if (credentials) {
       storage.setItem(
