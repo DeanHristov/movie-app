@@ -1,18 +1,6 @@
-@import "mixins";
+@import "variables";
+@import '../mixins/miscellaneous';
 
-$cube-loader-size: 8rem;
-$cycle-loader-size: 12rem;
-.slide-up-in{
-  @include slide-up-in();
-}
-
-.slide-up-in-2x{
-  @include slide-up-in(1s);
-}
-
-.slide-up-in-3x{
-  @include slide-up-in(1.5s);
-}
 .cycle-loader{
   @include calc-preloader-size($cycle-loader-size);
 
@@ -33,22 +21,22 @@ $cycle-loader-size: 12rem;
 @keyframes slide-up-fade-in{
   0% {
     opacity:0;
-    transform:  translate(0px,40px)  ;
+    transform:  translate(0, 4rem);
   }
   100% {
     opacity:1;
-    transform:  translate(0px,0px)  ;
+    transform:  translate(0, 0);
   }
 }
 
 
 @keyframes cycle-loader {
   from {
-    transform: rotate(0deg);
+    @include transform(rotate(0deg));
   }
 
   to {
-    transform: rotate(360deg);
+    @include transform(rotate(360deg));
   }
 }
 
@@ -67,3 +55,5 @@ $cycle-loader-size: 12rem;
     -webkit-transform: perspective($cube-loader-size) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+
+

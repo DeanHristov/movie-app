@@ -1,0 +1,38 @@
+$primary-bg-color: #FBFBFB;
+$primary-color: #222;
+$primary-border-style: .1rem solid #ccc;
+$secondary-color: #555;
+
+// Heading
+$heading-color: #353535;
+$heading-border-style: $primary-border-style;
+
+// Brand
+$brand-bg-color: rgba(0, 163, 225, .6);
+$brand-color: #fff;
+
+// Header
+$header-bg-color: #2a2b30;
+$header-border-color: .1rem solid #202125;
+$header-color: #999;
+$header-hover-color: #fff;
+
+// Buttons
+$pagination-btn-bg-color: #4CAF50;
+$pagination-btn-color: #fff;
+
+$login-btn-bg-color: #F6A021;
+$login-btn-color: #fff;
+
+// Card item
+$card-item-rating-bg-color: rgba(246, 160, 33, 0.6);
+$card-item-rating-btn-bg-color: #F6A021;
+$card-item-heading-color: #fff;
+$card-item-overlay-bg-color: #000;
+$card-item-overlay-color: #c0392b;
+
+// ModalBox
+$modal-box-overlay-bg-color: rgba(0, 0, 0, 0.7);
+$modal-box-bg-color: $primary-bg-color;
+$modal-box-btn-bg-color: #4CAF50;
+$modal-box-btn-color: #fff;

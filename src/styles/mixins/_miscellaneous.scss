@@ -1,0 +1,116 @@
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  animation: $value;
+}
+
+@mixin transition-duration($time) {
+  -webkit-transition-duration: $time;
+  -o-transition-duration: $time;
+  transition-duration: $time;
+}
+
+@mixin box-shadow($content) {
+  -webkit-box-shadow: $content;
+  box-shadow: $content;
+}
+
+@mixin calc-preloader-size ($size, $bg-color: transperant, $color: #fff) {
+  width: $size;
+  height:$size;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -($size / 2);
+  margin-top: -($size / 2) ;
+  background-color: $bg-color;
+
+  border-radius: 50%;
+  border: 1rem solid #f3f3f3;
+  border-top: 1rem solid $color;
+  border-bottom: 1rem solid $color;
+
+  animation: cycle-loader 2s linear infinite;
+}
+
+@mixin slide-up-in($speed: .5s) {
+  -webkit-animation-name: slide-up-fade-in;
+  -webkit-animation-duration: $speed;
+
+  animation-name: slide-up-fade-in;
+  animation-duration: $speed;
+}
+
+@mixin brand-title($size, $color) {
+  text-transform: uppercase;
+  font-size: $size;
+  color: $color;
+  text-align: center;
+}
+
+@mixin main-button ($width, $bg-color: transperant, $color: #fff, $height: auto, $font-size: 1.6rem) {
+  width: $width;
+  height: $height;
+  cursor: pointer;
+  background-color: $bg-color;
+  color: $color;
+  font-size: $font-size;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+}
+@mixin page-header($color, $border, $font-size: 2.4rem) {
+  width: 100%;
+  min-width: 32rem;
+  height: auto;
+  padding: 1rem 0;
+
+  border-bottom: $border;
+  background-color: transparent;
+
+  font-size: $font-size;
+  font-weight: 300;
+  line-height: 2.8rem;
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin route-container() {
+  width: 100%;
+  min-width: 31rem;
+  height: auto;
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+@mixin calc-preloader-size ($size, $bg-color: transperant) {
+  width: $size;
+  height:$size;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -($size / 2);
+  margin-top: -($size / 2) ;
+  background-color: $bg-color;
+}
+
+@mixin slide-up-in($speed: .5s) {
+  -webkit-animation-name: slide-up-fade-in;
+  -webkit-animation-duration: $speed;
+
+  animation-name: slide-up-fade-in;
+  animation-duration: $speed;
+}
+
