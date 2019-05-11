@@ -1,7 +1,9 @@
 const pathResolve = require('path').resolve
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
+const projectConf = require('./project.conf') 
 const config = require('dotenv').config();
 
 if (config.error)
@@ -34,6 +36,7 @@ module.exports = env => ({
         }]
     },
     plugins: [
+        new DashboardPlugin(),
         new HtmlWebpackPlugin({
             template : './src/index.html',
             filename: './index.html'
@@ -65,11 +68,16 @@ module.exports = env => ({
     mode: env.NODE_ENV,
     devtool: (env.NODE_ENV === 'development') ? 'source-map' : false,
     devServer: {
-        port: 8081,
+        port: projectConf.devPORT,
         host: '0.0.0.0',
         overlay: true,
         hot: true,
         contentBase: '/dist',
-        historyApiFallback: true
-    }
+        historyApiFallback: true,
+    },
+    stats: { 
+      modules: true, 
+      chunkModules: true,
+      colors: true
+    },
 });

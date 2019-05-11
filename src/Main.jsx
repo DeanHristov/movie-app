@@ -51,6 +51,7 @@ class Main extends Component {
     const {togglePanel, req} = this.props;
     return (
       <div className="app-container">
+        <React.Fragment>
         {togglePanel ? <SettingPanelContainer/> : null}
         {req.isFetching && !req.isFetched ? <Preloader/> : null}
         <ModalBoxDispatcher/>
@@ -58,6 +59,7 @@ class Main extends Component {
           {routes.map((route) => this.renderRoutes(route))}
           <Route render={() => <Redirect to={'/movies'}/>}/>
         </Switch>
+        </React.Fragment>
       </div>
     )
   }

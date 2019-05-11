@@ -1,3 +1,4 @@
 module.exports = {
-  devPORT: 8081
+  devPORT: 8080,
+  devHOST: '0.0.0.0',
 }

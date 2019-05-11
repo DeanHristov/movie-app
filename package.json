@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "node_modules/.bin/webpack-dev-server --config=build/webpack.dev.conf.js --env.NODE_ENV=development",
+    "start:dev": "node_modules/.bin/webpack-dashboard -t '[DEV]: The Movie app' -- webpack-dev-server --config build/webpack.dev.conf.js --env.NODE_ENV=development --watch",
     "build:prod": "node_modules/.bin/webpack --config=build/webpack.prod.conf.js --env.NODE_ENV=production"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
+    "webpack-dashboard": "^3.0.6",
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
