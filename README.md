@@ -20,7 +20,7 @@ You can grab their value from [here](https://www.themoviedb.org/settings/api).
  npm install or yarn install
  ```
  
-2. Launch development server, and open `localhost:8081` in your browser:
+2. Launch development server, and open `localhost:8080` in your browser:
  ```bash
  npm run start:dev or yarn start:dev
  ```
